@@ -48,6 +48,12 @@ export default function Services() {
       desc: "Complete company and office setup services with integrated marketing tools to launch and grow your business presence in Saudi Arabia.",
       highlights: ["Company formation", "Office setup", "Marketing tools"],
     },
+    {
+      icon: Globe,
+      title: "Website Development",
+      desc: "Professional website design and development tailored for businesses in Saudi Arabia. From corporate websites to e-commerce platforms, we build scalable, modern digital presences.",
+      highlights: ["Corporate websites", "E-commerce", "Digital presence"],
+    },
   ];
 
   const stats = [

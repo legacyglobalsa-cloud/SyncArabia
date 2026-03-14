@@ -19,7 +19,7 @@ export default function Navbar() {
     { to: "/", label: "Home", end: true },
     { to: "/subsidiary", label: "Subsidiary Companies" },
     { to: "/services", label: "Services" },
-    { to: "/clients", label: "Clients" },
+    { to: "/clients", label: "Clients", disabled: true },
     { to: "/about", label: "About" },
     { to: "/partnerships", label: "Partnership" },
     { to: "/contact", label: "Contact" },
@@ -50,33 +50,43 @@ export default function Navbar() {
               : "bg-black/50 backdrop-blur-xl border border-white/[0.04] shadow-xl shadow-black/30"
           }`}
         >
-          {links.map((l) => (
-            <NavLink key={l.to} to={l.to} end={l.end}>
-              {({ isActive }) => (
-                <span
-                  className={`relative flex items-center gap-2 px-4 py-2 text-[13px] font-medium rounded-full transition-all duration-300 whitespace-nowrap ${
-                    isActive ? "text-white" : "text-white/50 hover:text-white/80"
-                  }`}
-                >
-                  {isActive && (
-                    <motion.span
-                      layoutId="pill-bg"
-                      className="absolute inset-0 rounded-full bg-white/[0.06]"
-                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                    />
-                  )}
-                  {isActive && (
-                    <motion.span
-                      layoutId="nav-dot"
-                      className="relative w-1.5 h-1.5 rounded-full bg-primary shrink-0"
-                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                    />
-                  )}
-                  <span className="relative">{l.label}</span>
-                </span>
-              )}
-            </NavLink>
-          ))}
+          {links.map((l) =>
+            l.disabled ? (
+              <span
+                key={l.to}
+                className="relative flex items-center gap-2 px-4 py-2 text-[13px] font-medium rounded-full whitespace-nowrap text-white/20 cursor-not-allowed select-none"
+                title="Coming soon"
+              >
+                {l.label}
+              </span>
+            ) : (
+              <NavLink key={l.to} to={l.to} end={l.end}>
+                {({ isActive }) => (
+                  <span
+                    className={`relative flex items-center gap-2 px-4 py-2 text-[13px] font-medium rounded-full transition-all duration-300 whitespace-nowrap ${
+                      isActive ? "text-white" : "text-white/50 hover:text-white/80"
+                    }`}
+                  >
+                    {isActive && (
+                      <motion.span
+                        layoutId="pill-bg"
+                        className="absolute inset-0 rounded-full bg-white/[0.06]"
+                        transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                      />
+                    )}
+                    {isActive && (
+                      <motion.span
+                        layoutId="nav-dot"
+                        className="relative w-1.5 h-1.5 rounded-full bg-primary shrink-0"
+                        transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                      />
+                    )}
+                    <span className="relative">{l.label}</span>
+                  </span>
+                )}
+              </NavLink>
+            )
+          )}
         </nav>
 
         {/* Portal button */}
@@ -151,23 +161,33 @@ export default function Navbar() {
                 </button>
               </div>
               <nav className="flex flex-col p-6 gap-1">
-                {links.map((l) => (
-                  <NavLink
-                    key={l.to}
-                    to={l.to}
-                    end={l.end}
-                    onClick={() => setOpen(false)}
-                    className={({ isActive }) =>
-                      `px-4 py-3.5 rounded-xl transition-all duration-300 text-[15px] font-medium ${
-                        isActive
-                          ? "bg-primary/10 text-primary border border-primary/20"
-                          : "text-white/50 hover:bg-white/5 hover:text-white"
-                      }`
-                    }
-                  >
-                    {l.label}
-                  </NavLink>
-                ))}
+                {links.map((l) =>
+                  l.disabled ? (
+                    <span
+                      key={l.to}
+                      className="px-4 py-3.5 rounded-xl text-[15px] font-medium text-white/20 cursor-not-allowed select-none"
+                      title="Coming soon"
+                    >
+                      {l.label}
+                    </span>
+                  ) : (
+                    <NavLink
+                      key={l.to}
+                      to={l.to}
+                      end={l.end}
+                      onClick={() => setOpen(false)}
+                      className={({ isActive }) =>
+                        `px-4 py-3.5 rounded-xl transition-all duration-300 text-[15px] font-medium ${
+                          isActive
+                            ? "bg-primary/10 text-primary border border-primary/20"
+                            : "text-white/50 hover:bg-white/5 hover:text-white"
+                        }`
+                      }
+                    >
+                      {l.label}
+                    </NavLink>
+                  )
+                )}
                 <a
                   href="https://legacyglobalsa.com/login"
                   target="_blank"
