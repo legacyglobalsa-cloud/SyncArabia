@@ -16,11 +16,11 @@ export default function Footer() {
             <span className="text-xl font-bold text-white">Sync<span className="text-primary">Arabia</span></span>
           </Link>
           <p className="text-white/40 leading-relaxed max-w-sm">
-            Bridging businesses across the Arabian region with technology-driven solutions and strategic partnerships.
+            A problem-solving commercial ecosystem connecting businesses, investors, and partners into structured opportunities across multiple industries.
           </p>
           <div className="flex items-center gap-2 text-xs text-primary font-medium tracking-wider uppercase">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            Connecting the Region
+            Capital — Opportunity — Execution — Impact
           </div>
         </div>
 

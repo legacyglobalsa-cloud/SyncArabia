@@ -46,7 +46,7 @@ export const translations = {
       website: "Website",
       office: "Office",
       poweredBy: "Powered by",
-      divisionOf: "A Division of Legacy Global Commercial Services Co.",
+      divisionOf: "A Division of Sync Arabia Holdings",
     },
     // Subsidiary Page
     subsidiary: {
@@ -1111,68 +1111,68 @@ export const translations = {
     },
     // Services Page
     services: {
-      titlePart1: "Global",
+      titlePart1: "Strategic",
       titlePart2: "Solutions",
       subtitle:
-        "We offer tailored B2B consultancy and business solutions to meet the evolving needs of our clients—ensuring",
-      subtitleHighlight: "secure, transparent, and successful transactions",
+        "SYNC Arabia operates as a structured commercial engine—connecting capital, projects, companies, and execution into one integrated ecosystem through",
+      subtitleHighlight: "facilitation, consultancy, recruitment, and sector-based execution",
       subtitleEnd: "across industries.",
       coreServicesTitle: "Our Core",
       coreServicesHighlight: "Service Offerings",
-      sectorsTitle: "Business",
-      sectorsHighlight: "Sectors We Serve",
+      sectorsTitle: "Industry",
+      sectorsHighlight: "Execution Platforms",
       clientFlowTitle: "Our",
-      clientFlowHighlight: "Client Engagement Flow",
+      clientFlowHighlight: "Project Sourcing Process",
       learnMoreButton: "Learn more about our Due Diligence Process",
       engage: "Engage",
       // Service items
-      buyerRepTitle: "Buyer/Clients Representation",
+      buyerRepTitle: "Business Matchmaking & Project Facilitation",
       buyerRepDesc:
-        "Acting on behalf of buyers/clients to secure the best opportunities aligned with strategic goals.",
-      sellerRepTitle: "Seller/Service Providers Representation",
+        "Connect companies to contractors, suppliers, and partners. Structure alliances and position companies into project pipelines.",
+      sellerRepTitle: "Investment Facilitation",
       sellerRepDesc:
-        "Helping sellers/service providers reach qualified buyers and markets efficiently.",
-      marketAnalysisTitle: "Consultancy on Market Analysis",
+        "Bring investors into Saudi projects and connect Saudi investors to global assets with structured alignment.",
+      marketAnalysisTitle: "Partnership Development",
       marketAnalysisDesc:
-        "Insights and analytics to position your business competitively in new and existing markets.",
-      transactionTitle: "Transaction Support",
+        "Strategic joint ventures, public-private collaboration, cross-border partnerships, and ecosystem building.",
+      transactionTitle: "Business Consultancy",
       transactionDesc:
-        "Due diligence, documentation, and negotiation support from inquiry to closing.",
-      businessPlanTitle: "Business Planning & Expansion Strategies",
+        "Market entry advisory, operational restructuring, strategy & growth planning, and commercial optimization.",
+      businessPlanTitle: "Merger & Acquisition (M&A)",
       businessPlanDesc:
-        "Customized plans for growth, market entry, and long‑term scalability.",
+        "Acquisition sourcing, buyer-seller alignment, valuation coordination, due diligence, and post-merger integration.",
       riskManagementTitle: "Risk Management & Compliance",
       riskManagementDesc:
-        "Comprehensive risk assessment, compliance verification, and regulatory guidance to protect your business interests.",
+        "Comprehensive risk assessment, KYC workflows, compliance verification, and regulatory guidance.",
       // Client Flow
-      step1Title: "Initial Inquiry",
-      step1Desc: "Verification & documentation",
-      step2Title: "Matching",
-      step2Desc: "Sourcing the right partners",
-      step3Title: "Negotiation",
-      step3Desc: "Agreement and terms",
-      step4Title: "Payment",
-      step4Desc: "Fulfillment and delivery",
-      step5Title: "QA/QC",
-      step5Desc: "Compliance and after‑sales support",
+      step1Title: "Identification",
+      step1Desc: "Sourcing from tenders, portals, partners & networks",
+      step2Title: "Screening & Due Diligence",
+      step2Desc: "Feasibility assessment & stakeholder mapping",
+      step3Title: "Structuring",
+      step3Desc: "Deal structuring & alignment",
+      step4Title: "Client/Investor Matching",
+      step4Desc: "Connecting capital to execution",
+      step5Title: "Execution & Monitoring",
+      step5Desc: "Progress tracking & completion assurance",
     },
     // About Page
     about: {
       pageTitle: "About",
-      pageTitleHighlight: "Legacy Global",
+      pageTitleHighlight: "SYNC Arabia",
       intro:
-        "Legacy Global is a trusted B2B gateway—bridging buyers/clients and sellers/service providers through a verification-driven, technology-enabled consultancy platform. We facilitate seamless, secure, and efficient transactions built on trust, transparency, and rigorous due diligence.",
+        "SYNC Arabia is a problem-solving commercial, investment, and execution ecosystem designed to bridge critical gaps in the Saudi business environment. We connect contractors to projects, investors to opportunities, and capital to execution platforms.",
       whyChooseTitle: "Why Choose",
-      whyChooseTitleHighlight: "Legacy Global",
+      whyChooseTitleHighlight: "SYNC Arabia",
       whyChooseSubtitle:
-        "We don't just facilitate business; we build partnerships that last.",
+        "We don't just facilitate business; we solve structural market problems.",
       visionMissionTitle: "Vision & Mission",
       visionLabel: "Vision:",
       visionText:
-        "To be a trusted bridge between nations, businesses, and people—empowering ethical innovation through integrity, service, and excellence.",
+        "To build a business ecosystem that creates happy employees, trusted suppliers, confident investors, empowered partners, satisfied clients, and stronger communities—while generating measurable economic value and long-term impact in the Saudi business environment.",
       missionLabel: "Mission:",
       missionText:
-        "We bridge businesses through innovation, integrity, and due diligence—verifying buyers and sellers, optimizing transactions with technology‑driven solutions, expanding global opportunities, and fostering long‑term partnerships built on transparency, efficiency, and mutual success.",
+        "To identify real market problems and solve them through structured, scalable business solutions. To connect businesses, manpower, capital, and opportunities into one integrated ecosystem—prioritizing trust, service excellence, and long-term partnerships over short-term gains.",
       mdMessageTitle: "Message from the Managing Director",
       ceoMessageTitle: "Message from the CEO",
       coreValuesTitle: "Our",
@@ -1180,15 +1180,15 @@ export const translations = {
       keyDataTitle: "Key Data",
       competitiveEdgeTitle: "Our Competitive Edge",
       mdMessageBody1:
-        "At Legacy Global, we believe success in business is built on trust, transparency, and strategic connections. Our mission is to bridge businesses, facilitate seamless transactions, and drive sustainable growth through innovation and due diligence. In today’s fast‑paced market, securing reliable partners is critical. That’s why we go beyond traditional consultancy—conducting rigorous verification to ensure every deal is built on a solid foundation.",
+        "At SYNC Arabia, we are building more than a company. We are creating a problem-solving ecosystem designed to bridge the gaps that hold businesses back in the Saudi market. Our mission is to connect contractors to projects, investors to vetted opportunities, and capital to execution platforms with trust and transparency at the core of every transaction.",
       mdMessageBody2:
-        "We empower enterprises with insights, strategies, and networks to achieve long‑term success. Whether you’re expanding, optimizing, or exploring new opportunities, Legacy Global is your trusted partner.",
+        "We go beyond traditional consultancy by conducting rigorous due diligence, structuring deals, and facilitating execution across multiple industries. Whether you are expanding, investing, or exploring new markets, SYNC Arabia is your trusted partner for sustainable growth.",
       mdName: "Fahad Al-Saeed",
       mdTitle: "Managing Director",
       ceoMessageBody1:
-        "We are driven by a singular vision—to create a seamless, secure, and efficient business ecosystem where trust and transparency are at the core of every transaction. Businesses need more than connections; they need credible, verified, and strategic partnerships. Due diligence is our competitive edge.",
+        "We are driven by a singular vision: to synchronize capital, opportunity, and execution into one integrated ecosystem. Businesses in Saudi Arabia need more than connections. They need credible, verified, and strategic partnerships backed by rigorous due diligence and real market intelligence.",
       ceoMessageBody2:
-        "Beyond consultancy, we empower businesses—startups and enterprises alike—to achieve sustainable growth through market analysis, business strategy, and transaction management. At Legacy Global, we don’t just connect businesses; we synchronize success.",
+        "Beyond consultancy, we empower businesses to achieve sustainable growth through structured facilitation, deal origination, and investment readiness. At SYNC Arabia, we do not just connect businesses. We solve real problems, bridge real gaps, and deliver real impact.",
       ceoName: "Jeffrey de Dios",
       ceoTitle: "Chief Executive Officer",
       coreValues: {
@@ -1289,7 +1289,7 @@ export const translations = {
     // Footer
     footer: {
       tagline:
-        "We deliver business opportunities to your doorstep—bridging buyers, clients, and service providers with trust and transparency.",
+        "A problem-solving commercial ecosystem connecting businesses, investors, and partners into structured opportunities across multiple industries.",
       vision2030: "Supporting Vision 2030, K.S.A.",
       contactUs: "Contact Us",
       quickLinks: "Quick Links",
@@ -1299,7 +1299,7 @@ export const translations = {
       about: "About Us",
       partnerships: "Partnerships",
       contact: "Contact",
-      copyright: "Legacy Global Commercial Services Co. All rights reserved.",
+      copyright: "Sync Arabia Holdings. All rights reserved.",
       privacy: "Privacy Policy",
       terms: "Terms of Service",
     },

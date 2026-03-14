@@ -79,8 +79,15 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Balance spacer for logo */}
-        <div className="hidden lg:block w-10 shrink-0" />
+        {/* Portal button */}
+        <a
+          href="https://legacyglobalsa.com/login"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden lg:flex items-center px-5 py-2 rounded-full bg-primary text-primary-foreground text-[13px] font-bold hover:bg-primary/90 transition-all duration-300 shrink-0 shadow-lg shadow-primary/20"
+        >
+          Portal
+        </a>
 
         {/* Mobile hamburger */}
         <button
@@ -161,6 +168,14 @@ export default function Navbar() {
                     {l.label}
                   </NavLink>
                 ))}
+                <a
+                  href="https://legacyglobalsa.com/login"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-3.5 rounded-xl transition-all duration-300 text-[15px] font-medium bg-primary/10 text-primary border border-primary/20 text-center mt-2"
+                >
+                  Portal
+                </a>
               </nav>
             </motion.div>
           </motion.div>

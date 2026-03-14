@@ -44,21 +44,21 @@ export default function About() {
   };
 
   const coreValues = [
-    { title: "Integrity", desc: "We operate with honesty and transparency in every interaction, building trust that lasts.", icon: Shield },
-    { title: "Partnership", desc: "We believe in the power of collaboration to create mutual value and drive shared success.", icon: Handshake },
-    { title: "Excellence", desc: "We strive for the highest standards in service delivery and client satisfaction.", icon: Star },
-    { title: "Innovation", desc: "We embrace technology and creative thinking to deliver cutting-edge solutions.", icon: Check },
-    { title: "Global Vision", desc: "We think globally while acting locally, connecting the Arabian market to the world.", icon: Globe },
-    { title: "Unity", desc: "We foster a culture of teamwork, respect, and shared purpose across all operations.", icon: Compass },
+    { title: "Trust", desc: "We prioritize trust above all — building relationships where every stakeholder can operate with confidence.", icon: Shield },
+    { title: "Service Excellence", desc: "We operate with discipline under the principle of under-promise and over-deliver in everything we do.", icon: Star },
+    { title: "Partnership", desc: "We believe in long-term partnerships over short-term gains, creating mutual value that lasts.", icon: Handshake },
+    { title: "Problem-Solving", desc: "We identify real market problems and solve them through structured, scalable business solutions.", icon: Check },
+    { title: "Impact", desc: "We create measurable economic value and long-term impact in the Saudi business community.", icon: Globe },
+    { title: "Unity", desc: "We connect businesses, manpower, capital, and opportunities into one integrated ecosystem.", icon: Compass },
   ];
 
   const advantages = [
-    { icon: ShieldCheck, title: "Verified Transactions", desc: "Comprehensive due diligence and verification of all parties minimizes risk." },
-    { icon: Handshake, title: "Strategic Partnerships", desc: "Building long-term relationships that create mutual value." },
-    { icon: BarChart3, title: "Market Intelligence", desc: "Data-driven insights for confident decision-making." },
-    { icon: Users, title: "Regional Expertise", desc: "Deep understanding of Arabian markets and business culture." },
-    { icon: Rocket, title: "Innovation First", desc: "Leveraging technology for streamlined, modern solutions." },
-    { icon: Truck, title: "End-to-End Support", desc: "From initial inquiry to deal completion, we're with you every step." },
+    { icon: ShieldCheck, title: "Due Diligence & Verification", desc: "Rigorous screening and verification of all parties — minimizing risk and building trust." },
+    { icon: Handshake, title: "Deal Origination Hub", desc: "Structured project access and facilitation connecting contractors, investors, and opportunities." },
+    { icon: BarChart3, title: "Investment Gateway", desc: "Inbound and outbound investment facilitation with feasibility assessment and structuring." },
+    { icon: Users, title: "Corporate Expansion Engine", desc: "Market entry advisory, partnership development, and operational restructuring for growth." },
+    { icon: Rocket, title: "Digital Platform", desc: "Proprietary platform with dashboards, KYC workflows, project tracking, and opportunity intelligence." },
+    { icon: Truck, title: "End-to-End Execution", desc: "From identification to stakeholder matching to structured execution — we handle the full lifecycle." },
   ];
 
   return (
@@ -77,32 +77,32 @@ export default function About() {
               <Reveal>
                 <p className="text-primary font-semibold tracking-widest uppercase text-sm mb-4">About Us</p>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] mb-6">
-                  Synergize Your<br/>
-                  <span className="text-gradient-gold">Network Channel</span>
+                  A Problem-Solving<br/>
+                  <span className="text-gradient-gold">Commercial Ecosystem</span>
                 </h1>
               </Reveal>
               <Reveal delay={0.1}>
                 <p className="text-lg text-white/50 leading-relaxed mb-8 max-w-lg">
-                  SyncArabia is a technology-driven business platform dedicated to bridging companies across the Arabian region.
-                  We connect buyers, sellers, and service providers with trusted partnerships, strategic market insights,
-                  and innovative solutions that drive growth.
+                  SYNC Arabia is a problem-solving commercial, investment, and execution ecosystem 
+                  designed to bridge critical gaps in the Saudi business environment. We connect contractors to projects, 
+                  investors to opportunities, and capital to execution platforms — all within one integrated ecosystem.
                 </p>
               </Reveal>
               <Reveal delay={0.2}>
                 <div className="flex gap-8">
                   <div>
-                    <p className="text-3xl font-extrabold text-primary">500+</p>
-                    <p className="text-sm text-white/40 mt-1">Projects</p>
+                    <p className="text-3xl font-extrabold text-primary">13+</p>
+                    <p className="text-sm text-white/40 mt-1">Industry Platforms</p>
                   </div>
                   <div className="w-px bg-white/10" />
                   <div>
-                    <p className="text-3xl font-extrabold text-accent">50+</p>
-                    <p className="text-sm text-white/40 mt-1">Partners</p>
+                    <p className="text-3xl font-extrabold text-accent">3</p>
+                    <p className="text-sm text-white/40 mt-1">Market Tiers</p>
                   </div>
                   <div className="w-px bg-white/10" />
                   <div>
-                    <p className="text-3xl font-extrabold text-primary">12+</p>
-                    <p className="text-sm text-white/40 mt-1">Sectors</p>
+                    <p className="text-3xl font-extrabold text-primary">6</p>
+                    <p className="text-sm text-white/40 mt-1">Core Services</p>
                   </div>
                 </div>
               </Reveal>
@@ -205,8 +205,9 @@ export default function About() {
                 <div className="w-3 h-12 rounded-full bg-primary mb-6" />
                 <h3 className="text-2xl font-bold text-white mb-4">Our Vision</h3>
                 <p className="text-white/50 leading-relaxed text-lg">
-                  To become the leading digital platform for business connectivity across the Arabian region,
-                  empowering companies to grow through trusted partnerships and innovative solutions.
+                  To build a business ecosystem that creates happy employees, trusted suppliers, confident investors,
+                  empowered partners, satisfied clients, and stronger communities — while generating measurable
+                  economic value and long-term impact in the Saudi business environment.
                 </p>
               </div>
             </Reveal>
@@ -215,8 +216,9 @@ export default function About() {
                 <div className="w-3 h-12 rounded-full bg-accent mb-6" />
                 <h3 className="text-2xl font-bold text-white mb-4">Our Mission</h3>
                 <p className="text-white/50 leading-relaxed text-lg">
-                  To bridge businesses with strategic opportunities, market intelligence, and technology-driven
-                  solutions that foster sustainable growth and regional prosperity.
+                  To identify real market problems and solve them through structured, scalable business solutions.
+                  To connect businesses, manpower, capital, and opportunities into one integrated ecosystem — 
+                  prioritizing trust, service excellence, and long-term partnerships over short-term gains.
                 </p>
               </div>
             </Reveal>
@@ -268,13 +270,13 @@ export default function About() {
                   Our Competitive <span className="text-gradient-gold">Edge</span>
                 </h3>
                 <p className="text-lg text-white/50 mb-8 max-w-2xl">
-                  We combine regional expertise with cutting-edge technology to deliver unmatched value.
+                  SYNC Arabia solves three structural gaps in the market: contractors without access, investors without trust, and projects without funding.
                 </p>
                 <div className="grid md:grid-cols-3 gap-4">
                   {[
-                    "Rigorous due diligence and comprehensive verification of all business partners.",
-                    "Technology-driven solutions for seamless business connectivity and optimization.",
-                    "Strategic networks spanning the Arabian Gulf with deep cross-sector expertise.",
+                    "Structured project access and facilitation — connecting companies to real opportunities and decision-makers.",
+                    "Due diligence, deal structuring, and a trusted platform — giving investors confidence and verified opportunities.",
+                    "Investor matching, project structuring, and capital alignment — unlocking funding for viable projects.",
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3 p-5 rounded-xl bg-white/[0.03] border border-white/[0.04]">
                       <Check className="size-5 text-primary mt-0.5 shrink-0" />

@@ -66,11 +66,11 @@ export default function Home() {
             {/* Tagline */}
             <motion.div variants={itemVariants} className="max-w-3xl">
               <p className="text-white/70 text-lg sm:text-xl md:text-2xl font-light leading-relaxed tracking-wide">
-                Bridging businesses with{" "}
-                <span className="text-primary font-medium">strategic partnerships</span>,{" "}
-                <span className="text-accent font-medium">technology solutions</span>,{" "}
-                and <span className="text-primary font-medium">market access</span>{" "}
-                across the Arabian region.
+                A{" "}
+                <span className="text-primary font-medium">problem-solving ecosystem</span>{" "}
+                connecting businesses, investors, and partners into{" "}
+                <span className="text-accent font-medium">structured opportunities</span>{" "}
+                through <span className="text-primary font-medium">facilitation, consultancy, and execution</span>.
               </p>
             </motion.div>
 

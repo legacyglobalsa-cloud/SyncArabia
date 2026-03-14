@@ -1,5 +1,5 @@
 import Reveal from "../components/Reveal";
-import { Briefcase, Users, BarChart3, Handshake, Building2, CheckCircle2, Shield, ArrowRight, Zap, Target, TrendingUp } from "lucide-react";
+import { Briefcase, Users, BarChart3, Handshake, Building2, CheckCircle2, Shield, ArrowRight, Zap, Target, TrendingUp, Store, GitMerge, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "../components/ui/button";
 import * as FM from "framer-motion";
@@ -7,48 +7,54 @@ import * as FM from "framer-motion";
 export default function Services() {
   const services = [
     {
-      icon: Briefcase,
-      title: "Buyer Representation",
-      desc: "End-to-end support for organizations looking to source products and services from trusted regional suppliers.",
-      highlights: ["Supplier vetting", "Price negotiation", "Quality assurance"],
-    },
-    {
-      icon: Users,
-      title: "Seller Representation",
-      desc: "Strategic market access and buyer matching for companies seeking to expand their reach in the Arabian market.",
-      highlights: ["Market entry", "Buyer matching", "Brand positioning"],
+      icon: Handshake,
+      title: "Business Matchmaking & Project Facilitation",
+      desc: "Connect companies to contractors, suppliers, and partners. Structure alliances, support market entry, and position companies into project pipelines.",
+      highlights: ["Project access", "Market entry", "Alliance structuring"],
     },
     {
       icon: BarChart3,
-      title: "Market Analysis",
-      desc: "In-depth market research and competitive analysis to help you make informed investment and expansion decisions.",
-      highlights: ["Competitive intel", "Trend analysis", "Feasibility studies"],
+      title: "Investment Facilitation",
+      desc: "Bring investors into Saudi projects and connect Saudi investors to global assets. Structure investor-project alignment and prepare feasibility assessments.",
+      highlights: ["Inbound investment", "Outbound global", "Deal structuring"],
     },
     {
-      icon: Handshake,
-      title: "Transaction Management",
-      desc: "Secure, transparent handling of commercial transactions from negotiation through completion.",
-      highlights: ["Due diligence", "Contract management", "Escrow services"],
+      icon: Users,
+      title: "Partnership Development",
+      desc: "Strategic joint ventures, public-private collaboration, cross-border partnerships, and ecosystem building for sustainable growth.",
+      highlights: ["Joint ventures", "Cross-border", "Ecosystem building"],
     },
     {
-      icon: Building2,
-      title: "Business Planning",
-      desc: "Comprehensive business planning and feasibility studies tailored to the Arabian market.",
-      highlights: ["Strategy design", "Financial modeling", "Go-to-market"],
+      icon: Briefcase,
+      title: "Business Consultancy",
+      desc: "Market entry advisory, operational restructuring, strategy & growth planning, and commercial optimization for businesses of all sizes.",
+      highlights: ["Market advisory", "Growth planning", "Restructuring"],
+    },
+    {
+      icon: GitMerge,
+      title: "Merger & Acquisition (M&A)",
+      desc: "Acquisition sourcing, buyer-seller alignment, corporate consolidation, valuation coordination, due diligence support, and post-merger integration.",
+      highlights: ["Acquisition sourcing", "Due diligence", "Integration"],
     },
     {
       icon: Shield,
-      title: "Risk Management",
-      desc: "Proactive risk assessment and mitigation strategies to protect your business interests.",
-      highlights: ["Risk profiling", "Compliance", "Contingency planning"],
+      title: "Risk Management & Compliance",
+      desc: "Comprehensive risk assessment, compliance verification, KYC workflows, and regulatory guidance to protect your business interests.",
+      highlights: ["Risk profiling", "KYC & compliance", "Governance"],
+    },
+    {
+      icon: Store,
+      title: "Company & Office Setup with Marketing Tools",
+      desc: "Complete company and office setup services with integrated marketing tools to launch and grow your business presence in Saudi Arabia.",
+      highlights: ["Company formation", "Office setup", "Marketing tools"],
     },
   ];
 
   const stats = [
-    { value: "500+", label: "Projects Completed", icon: Target },
-    { value: "12+", label: "Sectors Covered", icon: Zap },
-    { value: "50+", label: "Active Partners", icon: Handshake },
-    { value: "98%", label: "Client Satisfaction", icon: TrendingUp },
+    { value: "13+", label: "Industry Platforms", icon: Target },
+    { value: "6", label: "Core Service Lines", icon: Zap },
+    { value: "3", label: "Market Tiers", icon: Globe },
+    { value: "1", label: "Integrated Ecosystem", icon: TrendingUp },
   ];
   
   return (
@@ -69,13 +75,13 @@ export default function Services() {
           >
             <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
             <div className="relative z-10 max-w-3xl">
-              <p className="text-primary font-semibold tracking-widest uppercase text-sm mb-4">What We Do</p>
+              <p className="text-primary font-semibold tracking-widest uppercase text-sm mb-4">Division 1 — Core Business Model</p>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] mb-6">
-                Services Built<br/>
-                <span className="text-gradient-gold">For Growth</span>
+                Strategic &<br/>
+                <span className="text-gradient-gold">Commercial Engine</span>
               </h1>
               <p className="text-lg md:text-xl text-white/50 leading-relaxed max-w-2xl">
-                Comprehensive business solutions designed to help you connect, grow, and succeed in the Arabian market.
+                Structured commercial solutions designed to connect capital, projects, companies, and execution into one integrated ecosystem.
               </p>
             </div>
           </FM.motion.div>
@@ -159,18 +165,21 @@ export default function Services() {
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {[
-              "Oil and Gas Trading (International)",
-              "Various Commodities Trading (Import & Export)",
-              "Manpower Supply (Local & International)",
-              "Real Estate Industry (Local & International)",
-              "Construction Industry (Local & International)",
-              "Technology & Innovation (Local & International)",
-              "Investments and Business Development",
-              "Entertainment / Logistics / Warehousing",
-              "Business Acquisition & Partnership",
+              "Recruitment & Manpower",
+              "Entertainment, F&B & Events",
+              "Oil & Gas",
+              "Construction & Engineering",
+              "Innovation & Technology",
               "Facility Management",
-              "Manufacturing, Maintenance & Fabrication",
-              "Other sectors and emerging markets",
+              "Logistics & Supply Chain",
+              "E-Commerce Platforms",
+              "Trade Import & Export",
+              "Real Estate Management",
+              "Travel & Leisure",
+              "Health & Wellness",
+              "Training & Development Centers",
+              "Food & Beverages",
+              "Manufacturing",
             ].map((item, i) => (
               <Reveal delay={i * 0.03} key={item}>
                 <FM.motion.div 
@@ -203,11 +212,11 @@ export default function Services() {
             
             <div className="space-y-8">
               {[
-                { step: "01", title: "Initial Inquiry", desc: "Share your business needs and goals with our team." },
-                { step: "02", title: "Matching", desc: "We identify the best-fit partners and opportunities." },
-                { step: "03", title: "Negotiation", desc: "We facilitate transparent discussions and terms." },
-                { step: "04", title: "Execution", desc: "Secure transaction management and quality delivery." },
-                { step: "05", title: "Follow-Up", desc: "Ongoing support and relationship management." },
+                { step: "01", title: "Identification", desc: "Sourcing opportunities from tenders, government portals, partners, and direct deal origination." },
+                { step: "02", title: "Screening & Due Diligence", desc: "Rigorous screening, feasibility assessment, and stakeholder mapping." },
+                { step: "03", title: "Structuring", desc: "Deal structuring, investor-project alignment, and documentation coordination." },
+                { step: "04", title: "Client/Investor Matching", desc: "Connecting the right stakeholders — capital to execution, projects to contractors." },
+                { step: "05", title: "Execution & Monitoring", desc: "Project progress monitoring, performance tracking, and completion assurance." },
               ].map((s, i) => (
                 <Reveal delay={i * 0.12} key={s.step}>
                   <div className="relative flex items-start gap-6 md:gap-8 pl-2">
