@@ -21,13 +21,13 @@ export default function Navbar() {
   useEffect(() => setOpen(false), [location]);
 
   const links = [
-    { to: "/", label: "Home", end: true },
-    { to: "/subsidiary", label: "Subsidiary Companies" },
-    { to: "/services", label: "Services" },
-    { to: "/clients", label: "Clients", disabled: true },
-    { to: "/about", label: "About" },
-    { to: "/partnerships", label: "Partnership" },
-    { to: "/contact", label: "Contact" },
+    { to: "/", label: t.nav.home, end: true },
+    { to: "/subsidiary", label: t.nav.subsidiary },
+    { to: "/services", label: t.nav.services },
+    { to: "/clients", label: t.nav.clients, disabled: true },
+    { to: "/about", label: t.nav.about },
+    { to: "/partnerships", label: t.nav.partnerships },
+    { to: "/contact", label: t.nav.contact },
   ];
 
   const langFlags = { en: "EN", ar: "AR", vi: "VI" };
