@@ -1,6 +1,11 @@
 import Reveal from "../components/Reveal";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../i18n/translations";
 
 export default function Clients() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   const clientImages = [
     "Al-Othman.png",
     "Boudl Hotel.png",
@@ -26,10 +31,10 @@ export default function Clients() {
         <Reveal>
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
-              Our <span className="text-gradient-gold">Clients</span>
+              {t.clients.title} <span className="text-gradient-gold">{t.clients.titleHighlight}</span>
             </h1>
             <p className="text-lg text-white/40 max-w-3xl mx-auto leading-relaxed">
-              We're proud to partner with leading organizations across the region. Our clients trust SyncArabia to deliver excellence.
+              {t.clients.description}
             </p>
             <div className="h-px w-32 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mt-8 opacity-70" />
           </div>

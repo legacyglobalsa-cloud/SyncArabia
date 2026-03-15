@@ -3,50 +3,49 @@ import { Briefcase, Users, BarChart3, Handshake, Building2, CheckCircle2, Shield
 import { Link } from "react-router-dom";
 import { Button } from "../components/ui/button";
 import * as FM from "framer-motion";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../i18n/translations";
 
 export default function Services() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   const services = [
     {
       icon: Handshake,
-      title: "Business Matchmaking & Project Facilitation",
-      desc: "Connect companies to contractors, suppliers, and partners. Structure alliances, support market entry, and position companies into project pipelines.",
+      title: t.services.buyerRepTitle,
+      desc: t.services.buyerRepDesc,
       highlights: ["Project access", "Market entry", "Alliance structuring"],
     },
     {
       icon: BarChart3,
-      title: "Investment Facilitation",
-      desc: "Bring investors into Saudi projects and connect Saudi investors to global assets. Structure investor-project alignment and prepare feasibility assessments.",
+      title: t.services.sellerRepTitle,
+      desc: t.services.sellerRepDesc,
       highlights: ["Inbound investment", "Outbound global", "Deal structuring"],
     },
     {
       icon: Users,
-      title: "Partnership Development",
-      desc: "Strategic joint ventures, public-private collaboration, cross-border partnerships, and ecosystem building for sustainable growth.",
+      title: t.services.marketAnalysisTitle,
+      desc: t.services.marketAnalysisDesc,
       highlights: ["Joint ventures", "Cross-border", "Ecosystem building"],
     },
     {
       icon: Briefcase,
-      title: "Business Consultancy",
-      desc: "Market entry advisory, operational restructuring, strategy & growth planning, and commercial optimization for businesses of all sizes.",
+      title: t.services.transactionTitle,
+      desc: t.services.transactionDesc,
       highlights: ["Market advisory", "Growth planning", "Restructuring"],
     },
     {
       icon: GitMerge,
-      title: "Merger & Acquisition (M&A)",
-      desc: "Acquisition sourcing, buyer-seller alignment, corporate consolidation, valuation coordination, due diligence support, and post-merger integration.",
+      title: t.services.businessPlanTitle,
+      desc: t.services.businessPlanDesc,
       highlights: ["Acquisition sourcing", "Due diligence", "Integration"],
     },
     {
       icon: Shield,
-      title: "Risk Management & Compliance",
-      desc: "Comprehensive risk assessment, compliance verification, KYC workflows, and regulatory guidance to protect your business interests.",
+      title: t.services.riskManagementTitle,
+      desc: t.services.riskManagementDesc,
       highlights: ["Risk profiling", "KYC & compliance", "Governance"],
-    },
-    {
-      icon: Store,
-      title: "Company & Office Setup with Marketing Tools",
-      desc: "Complete company and office setup services with integrated marketing tools to launch and grow your business presence in Saudi Arabia.",
-      highlights: ["Company formation", "Office setup", "Marketing tools"],
     },
   ];
 
@@ -55,6 +54,14 @@ export default function Services() {
     { value: "6", label: "Core Service Lines", icon: Zap },
     { value: "3", label: "Market Tiers", icon: Globe },
     { value: "1", label: "Integrated Ecosystem", icon: TrendingUp },
+  ];
+
+  const steps = [
+    { step: "01", title: t.services.step1Title, desc: t.services.step1Desc },
+    { step: "02", title: t.services.step2Title, desc: t.services.step2Desc },
+    { step: "03", title: t.services.step3Title, desc: t.services.step3Desc },
+    { step: "04", title: t.services.step4Title, desc: t.services.step4Desc },
+    { step: "05", title: t.services.step5Title, desc: t.services.step5Desc },
   ];
   
   return (
@@ -65,7 +72,7 @@ export default function Services() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 pt-28 pb-20 md:pt-32 md:pb-28">
         
-        {/* HEADER — Full width hero style */}
+        {/* HEADER */}
         <section className="mb-24 md:mb-32">
           <FM.motion.div
             initial={{ opacity: 0, y: -30 }}
@@ -77,11 +84,13 @@ export default function Services() {
             <div className="relative z-10 max-w-3xl">
               <p className="text-primary font-semibold tracking-widest uppercase text-sm mb-4">Division 1 — Core Business Model</p>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] mb-6">
-                Strategic &<br/>
-                <span className="text-gradient-gold">Commercial Engine</span>
+                {t.services.titlePart1} &<br/>
+                <span className="text-gradient-gold">{t.services.titlePart2}</span>
               </h1>
               <p className="text-lg md:text-xl text-white/50 leading-relaxed max-w-2xl">
-                Structured commercial solutions designed to connect capital, projects, companies, and execution into one integrated ecosystem.
+                {t.services.subtitle}{" "}
+                <span className="text-primary font-medium">{t.services.subtitleHighlight}</span>{" "}
+                {t.services.subtitleEnd}
               </p>
             </div>
           </FM.motion.div>
@@ -105,13 +114,15 @@ export default function Services() {
           </div>
         </section>
 
-        {/* CORE SERVICES — Alternating layout */}
+        {/* CORE SERVICES */}
         <section className="mb-24 md:mb-32 space-y-6">
           <Reveal>
             <div className="mb-12">
-              <p className="text-primary font-semibold tracking-widest uppercase text-sm mb-3">Core Expertise</p>
+              <p className="text-primary font-semibold tracking-widest uppercase text-sm mb-3">{t.services.coreServicesTitle}</p>
               <h2 className="text-3xl md:text-5xl font-bold">
-                Our <span className="text-gradient-gold">Services</span>
+                {t.services.coreServicesHighlight && (
+                  <><span className="text-gradient-gold">{t.services.coreServicesHighlight}</span></>
+                )}
               </h2>
             </div>
           </Reveal>
@@ -152,13 +163,13 @@ export default function Services() {
         
         <div className="h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent my-16" />
 
-        {/* SECTORS — Horizontal scroll style */}
+        {/* SECTORS */}
         <section className="mb-24 md:mb-32">
           <Reveal>
             <div className="mb-12">
-              <p className="text-accent font-semibold tracking-widest uppercase text-sm mb-3">Industries</p>
+              <p className="text-accent font-semibold tracking-widest uppercase text-sm mb-3">{t.services.sectorsTitle}</p>
               <h2 className="text-3xl md:text-5xl font-bold">
-                Sectors We <span className="text-gradient-gold">Serve</span>
+                <span className="text-gradient-gold">{t.services.sectorsHighlight}</span>
               </h2>
             </div>
           </Reveal>
@@ -194,30 +205,23 @@ export default function Services() {
           </div>
         </section>
 
-        {/* HOW WE WORK — Timeline style */}
+        {/* HOW WE WORK */}
         <section className="relative">
           <Reveal>
             <div className="text-center mb-16">
-              <p className="text-primary font-semibold tracking-widest uppercase text-sm mb-3">Our Process</p>
+              <p className="text-primary font-semibold tracking-widest uppercase text-sm mb-3">{t.services.clientFlowTitle}</p>
               <h2 className="text-3xl md:text-5xl font-bold">
-                How We <span className="text-gradient-gold">Work</span>
+                <span className="text-gradient-gold">{t.services.clientFlowHighlight}</span>
               </h2>
             </div>
           </Reveal>
           
-          {/* Vertical timeline for all screens */}
+          {/* Vertical timeline */}
           <div className="relative max-w-3xl mx-auto">
-            {/* Timeline line */}
             <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-primary/20 to-transparent" />
             
             <div className="space-y-8">
-              {[
-                { step: "01", title: "Identification", desc: "Sourcing opportunities from tenders, government portals, partners, and direct deal origination." },
-                { step: "02", title: "Screening & Due Diligence", desc: "Rigorous screening, feasibility assessment, and stakeholder mapping." },
-                { step: "03", title: "Structuring", desc: "Deal structuring, investor-project alignment, and documentation coordination." },
-                { step: "04", title: "Client/Investor Matching", desc: "Connecting the right stakeholders — capital to execution, projects to contractors." },
-                { step: "05", title: "Execution & Monitoring", desc: "Project progress monitoring, performance tracking, and completion assurance." },
-              ].map((s, i) => (
+              {steps.map((s, i) => (
                 <Reveal delay={i * 0.12} key={s.step}>
                   <div className="relative flex items-start gap-6 md:gap-8 pl-2">
                     <div className="relative z-10 w-10 h-10 md:w-14 md:h-14 rounded-full bg-primary text-primary-foreground grid place-items-center text-sm md:text-base font-extrabold shrink-0 shadow-lg shadow-primary/20 ring-4 ring-[#050505]">
@@ -242,7 +246,7 @@ export default function Services() {
           >
             <Link to="/about">
               <Button size="lg" className="bg-primary/10 text-primary border border-primary/30 hover:bg-primary/20 shadow-xl shadow-primary/10 transition-all duration-500 font-bold">
-                Learn More About Us <ArrowRight className="ml-2 h-4 w-4" />
+                {t.services.learnMoreButton} <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
           </FM.motion.div>

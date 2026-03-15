@@ -24,181 +24,198 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
-
-const subsidiaries = [
-  {
-    id: "syncManpower",
-    name: "Sync Manpower Recruitment",
-    sector: "Recruitment & Manpower",
-    icon: Users,
-    description: "Comprehensive recruitment and manpower solutions, connecting businesses with qualified professionals across industries.",
-    details: [
-      "AI-enhanced talent sourcing and screening",
-      "Local and overseas manpower deployment",
-      "Workforce planning and candidate matching",
-      "Pre-deployment guidance and support",
-    ],
-  },
-  {
-    id: "syncEntertainment",
-    name: "Sync Entertainment",
-    sector: "Entertainment, F&B & Events",
-    icon: Music,
-    description: "Full-spectrum entertainment, food & beverage, and events management services for memorable experiences.",
-    details: [
-      "Event planning and management",
-      "Food & beverage operations",
-      "Entertainment production",
-      "Venue sourcing and coordination",
-    ],
-  },
-  {
-    id: "syncFuels",
-    name: "SyncFuels",
-    sector: "Oil & Gas",
-    icon: Flame,
-    description: "Facilitating oil and gas trading, connecting verified suppliers with qualified buyers worldwide.",
-    details: [
-      "Crude oil and refined products facilitation",
-      "Supplier and buyer matching",
-      "Transaction structuring and coordination",
-      "Documentation and compliance support",
-    ],
-  },
-  {
-    id: "syncBuild",
-    name: "Sync Build",
-    sector: "Construction Conceptualization",
-    icon: Building2,
-    description: "Construction conceptualization and project development, transforming visions into built reality.",
-    details: [
-      "General contracting and turnkey projects",
-      "Smart home and building systems",
-      "Space-saving solutions and custom design",
-      "Advanced construction concepts",
-    ],
-  },
-  {
-    id: "syncInnovate",
-    name: "Sync Innovate",
-    sector: "Innovation & Technology",
-    icon: Lightbulb,
-    description: "Cutting-edge technology solutions including AI, software development, and digital transformation services.",
-    details: [
-      "AI solutions and automation",
-      "App and web development",
-      "Smart home and IoT systems",
-      "AR/VR technologies and consulting",
-    ],
-  },
-  {
-    id: "syncFacility",
-    name: "Sync Facility Management",
-    sector: "Facility Management",
-    icon: Wrench,
-    description: "Smart facility care and integrated maintenance solutions for commercial, residential, and industrial spaces.",
-    details: [
-      "Cleaning and janitorial solutions",
-      "Smart maintenance and monitoring",
-      "Preventive and corrective maintenance",
-      "Hygiene programs and eco-smart solutions",
-    ],
-  },
-  {
-    id: "syncLogistics",
-    name: "Sync Logistics",
-    sector: "Logistics & Supply Chain",
-    icon: Truck,
-    description: "End-to-end logistics and supply chain management with smart tracking and efficient delivery solutions.",
-    details: [
-      "Express delivery and freight solutions",
-      "Warehousing and inventory management",
-      "AI-powered route optimization",
-      "E-commerce fulfillment services",
-    ],
-  },
-  {
-    id: "syncShop",
-    name: "Sync Shop",
-    sector: "E-Commerce Platform Management",
-    icon: ShoppingCart,
-    description: "E-commerce platform management and retail distribution solutions for online and offline markets.",
-    details: [
-      "Online store management",
-      "Dynamic pricing and promotions",
-      "Inventory optimization with AI",
-      "Digital shopping experience",
-    ],
-  },
-  {
-    id: "syncDeal",
-    name: "Sync Deal",
-    sector: "Trade Import & Export",
-    icon: ArrowLeftRight,
-    description: "International trading, import & export facilitation, and global sourcing with compliance and quality assurance.",
-    details: [
-      "Global sourcing and trading",
-      "Import and export management",
-      "Saudi product registration and compliance",
-      "Intermediary and facilitation services",
-    ],
-  },
-  {
-    id: "syncLand",
-    name: "Sync Land",
-    sector: "Real Estate Management",
-    icon: Home,
-    description: "Real estate development, sales, and property management connecting investors with premium opportunities.",
-    details: [
-      "Global real estate connectivity",
-      "Investment advisory services",
-      "AI-powered property matching",
-      "Transaction support and facilitation",
-    ],
-  },
-  {
-    id: "syncLink",
-    name: "Sync Link",
-    sector: "Travel & Leisure",
-    icon: Plane,
-    description: "Travel and leisure solutions providing seamless travel experiences and lifestyle services.",
-    details: [
-      "Transportation and accommodation management",
-      "Travel itinerary planning",
-      "Airline reservations and coordination",
-      "24/7 travel support and assistance",
-    ],
-  },
-  {
-    id: "syncFit",
-    name: "Sync Fit",
-    sector: "Health and Wellness",
-    icon: Heart,
-    description: "Health, fitness, and wellness management including beauty services, fitness programs, and wellness solutions.",
-    details: [
-      "Professional beauty and wellness services",
-      "Premium product distribution",
-      "Fitness and transformation programs",
-      "AI-driven personalized solutions",
-    ],
-  },
-  {
-    id: "syncTraining",
-    name: "Sync Training",
-    sector: "Training & Development Centers",
-    icon: GraduationCap,
-    description: "Training and development centers including disaster-like training & rescue projects and specialized educational programs like School of Rock.",
-    details: [
-      "Disaster preparedness and rescue training",
-      "Professional development programs",
-      "Specialized skill-building courses",
-      "School of Rock music education",
-    ],
-  },
-];
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../i18n/translations";
 
 export default function Subsidiaries() {
   const [selectedCompany, setSelectedCompany] = useState(null);
+  const { language } = useLanguage();
+  const t = translations[language];
+  const sub = t.subsidiary;
+  const cards = sub.subsidiaryCards;
+
+  // Build subsidiaries data from translation keys
+  const subsidiaries = [
+    {
+      id: "syncManpower",
+      nameKey: "legaForceName",
+      descKey: "legaForce",
+      icon: Users,
+      sector: cards?.syncManpower?.sector || "Recruitment & Manpower",
+      details: cards?.syncManpower?.details || [
+        "AI-enhanced talent sourcing and screening",
+        "Local and overseas manpower deployment",
+        "Workforce planning and candidate matching",
+        "Pre-deployment guidance and support",
+      ],
+    },
+    {
+      id: "syncEntertainment",
+      nameKey: "legaFabName",
+      descKey: "legaFab",
+      icon: Music,
+      sector: cards?.syncEntertainment?.sector || "Entertainment, F&B & Events",
+      details: cards?.syncEntertainment?.details || [
+        "Event planning and management",
+        "Food & beverage operations",
+        "Entertainment production",
+        "Venue sourcing and coordination",
+      ],
+    },
+    {
+      id: "syncFuels",
+      nameKey: "legaVenturesName",
+      descKey: "legaVentures",
+      icon: Flame,
+      sector: cards?.syncFuels?.sector || "Oil & Gas",
+      details: cards?.syncFuels?.details || [
+        "Crude oil and refined products facilitation",
+        "Supplier and buyer matching",
+        "Transaction structuring and coordination",
+        "Documentation and compliance support",
+      ],
+    },
+    {
+      id: "syncBuild",
+      nameKey: "legaBuildName",
+      descKey: "legaBuild",
+      icon: Building2,
+      sector: cards?.syncBuild?.sector || "Construction Conceptualization",
+      details: cards?.syncBuild?.details || [
+        "General contracting and turnkey projects",
+        "Smart home and building systems",
+        "Space-saving solutions and custom design",
+        "Advanced construction concepts",
+      ],
+    },
+    {
+      id: "syncInnovate",
+      nameKey: "legaTechName",
+      descKey: "legaTech",
+      icon: Lightbulb,
+      sector: cards?.syncInnovate?.sector || "Innovation & Technology",
+      details: cards?.syncInnovate?.details || [
+        "AI solutions and automation",
+        "App and web development",
+        "Smart home and IoT systems",
+        "AR/VR technologies and consulting",
+      ],
+    },
+    {
+      id: "syncFacility",
+      nameKey: "legaServName",
+      descKey: "legaServ",
+      icon: Wrench,
+      sector: cards?.syncFacility?.sector || "Facility Management",
+      details: cards?.syncFacility?.details || [
+        "Cleaning and janitorial solutions",
+        "Smart maintenance and monitoring",
+        "Preventive and corrective maintenance",
+        "Hygiene programs and eco-smart solutions",
+      ],
+    },
+    {
+      id: "syncLogistics",
+      nameKey: "legaXpressName",
+      descKey: "legaXpress",
+      icon: Truck,
+      sector: cards?.syncLogistics?.sector || "Logistics & Supply Chain",
+      details: cards?.syncLogistics?.details || [
+        "Express delivery and freight solutions",
+        "Warehousing and inventory management",
+        "AI-powered route optimization",
+        "E-commerce fulfillment services",
+      ],
+    },
+    {
+      id: "syncShop",
+      nameKey: "legaShopName",
+      descKey: "legaShop",
+      icon: ShoppingCart,
+      sector: cards?.syncShop?.sector || "E-Commerce Platform Management",
+      details: cards?.syncShop?.details || [
+        "Online store management",
+        "Dynamic pricing and promotions",
+        "Inventory optimization with AI",
+        "Digital shopping experience",
+      ],
+    },
+    {
+      id: "syncDeal",
+      nameKey: "legaDealName",
+      descKey: "legaDeal",
+      icon: ArrowLeftRight,
+      sector: cards?.syncDeal?.sector || "Trade Import & Export",
+      details: cards?.syncDeal?.details || [
+        "Global sourcing and trading",
+        "Import and export management",
+        "Saudi product registration and compliance",
+        "Intermediary and facilitation services",
+      ],
+    },
+    {
+      id: "syncLand",
+      nameKey: "legaLandName",
+      descKey: "legaLand",
+      icon: Home,
+      sector: cards?.syncLand?.sector || "Real Estate Management",
+      details: cards?.syncLand?.details || [
+        "Global real estate connectivity",
+        "Investment advisory services",
+        "AI-powered property matching",
+        "Transaction support and facilitation",
+      ],
+    },
+    {
+      id: "syncLink",
+      nameKey: "legaLinkName",
+      descKey: "legaLink",
+      icon: Plane,
+      sector: cards?.syncLink?.sector || "Travel & Leisure",
+      details: cards?.syncLink?.details || [
+        "Transportation and accommodation management",
+        "Travel itinerary planning",
+        "Airline reservations and coordination",
+        "24/7 travel support and assistance",
+      ],
+    },
+    {
+      id: "syncFit",
+      nameKey: "legaFitName",
+      descKey: "legaFit",
+      icon: Heart,
+      sector: cards?.syncFit?.sector || "Health and Wellness",
+      details: cards?.syncFit?.details || [
+        "Professional beauty and wellness services",
+        "Premium product distribution",
+        "Fitness and transformation programs",
+        "AI-driven personalized solutions",
+      ],
+    },
+    {
+      id: "syncTraining",
+      nameKey: "legaWorkxName",
+      descKey: "legaWorkx",
+      icon: GraduationCap,
+      sector: cards?.syncTraining?.sector || "Training & Development Centers",
+      details: cards?.syncTraining?.details || [
+        "Disaster preparedness and rescue training",
+        "Professional development programs",
+        "Specialized skill-building courses",
+        "School of Rock music education",
+      ],
+    },
+  ].map(item => ({
+    ...item,
+    name: cards?.[item.id]?.name || item.id,
+    description: cards?.[item.id]?.description || "",
+    sector: cards?.[item.id]?.sector || item.sector,
+    details: cards?.[item.id]?.details || item.details,
+  }));
+
+  const keyServicesLabel = cards?.keyServicesLabel || "Key Services & Capabilities";
+  const divisionText = cards?.divisionText || "is a division of Sync Arabia Holdings, delivering specialized solutions in the";
+  const sectorSuffix = cards?.sectorSuffix || "sector.";
 
   return (
     <div className="bg-[#050505] text-white bg-noise overflow-x-hidden min-h-screen">
@@ -215,13 +232,12 @@ export default function Subsidiaries() {
           <Reveal>
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">
-                Subsidiary{" "}
-                <span className="text-gradient-gold">Companies</span>
+                {sub.title}{" "}
+                <span className="text-gradient-gold">{sub.titleHighlight}</span>
               </h2>
               <div className="h-px w-24 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto rounded-full" />
               <p className="mt-4 text-white/40 max-w-2xl mx-auto text-lg">
-                Our diverse portfolio of companies delivering excellence across
-                various sectors.
+                {sub.description}
               </p>
             </div>
           </Reveal>
@@ -256,7 +272,7 @@ export default function Subsidiaries() {
                     </p>
 
                     <span className="text-primary flex items-center text-sm font-semibold mt-auto">
-                      Learn More
+                      {sub.learnMore}
                       <ArrowRight className="ml-2 h-4 w-4 transform translate-x-0 group-hover:translate-x-1 transition-transform duration-300" />
                     </span>
                   </div>
@@ -305,7 +321,7 @@ export default function Subsidiaries() {
 
                 <div className="glass-dark p-6 rounded-xl border border-white/5">
                   <h4 className="text-lg font-semibold text-primary mb-4">
-                    Key Services & Capabilities
+                    {keyServicesLabel}
                   </h4>
                   <ul className="space-y-3">
                     {selectedCompany.details.map((detail, idx) => (
@@ -322,9 +338,8 @@ export default function Subsidiaries() {
                     <span className="text-primary font-semibold">
                       {selectedCompany.name}
                     </span>{" "}
-                    is a division of Sync Arabia Holdings, delivering specialized
-                    solutions in the {selectedCompany.sector.toLowerCase()}{" "}
-                    sector.
+                    {divisionText} {selectedCompany.sector.toLowerCase()}{" "}
+                    {sectorSuffix}
                   </p>
                 </div>
               </div>

@@ -4,8 +4,13 @@ import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal";
 import { motion } from "framer-motion";
 import Aurora from "../components/Aurora";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../i18n/translations";
 
 export default function Home() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -51,7 +56,7 @@ export default function Home() {
             animate="visible"
             className="flex flex-col items-center text-center gap-8 md:gap-10"
           >
-            {/* Logo only — the SyncArabia logo already contains the brand text */}
+            {/* Logo */}
             <motion.div
               variants={itemVariants}
               className="flex items-center justify-center"
@@ -66,11 +71,16 @@ export default function Home() {
             {/* Tagline */}
             <motion.div variants={itemVariants} className="max-w-3xl">
               <p className="text-white/70 text-lg sm:text-xl md:text-2xl font-light leading-relaxed tracking-wide">
-                A{" "}
-                <span className="text-primary font-medium">problem-solving ecosystem</span>{" "}
-                connecting businesses, investors, and partners into{" "}
-                <span className="text-accent font-medium">structured opportunities</span>{" "}
-                through <span className="text-primary font-medium">facilitation, consultancy, and execution</span>.
+                {t.home.tagline}{" "}
+                <span className="text-primary font-medium">{t.home.buyers}</span>,{" "}
+                <span className="text-primary font-medium">{t.home.clients}</span>,{" "}
+                {t.home.and}{" "}
+                <span className="text-accent font-medium">{t.home.serviceProviders}</span>{" "}
+                {t.home.withTrust}{" "}
+                <span className="text-primary font-medium">{t.home.trust}</span>,{" "}
+                <span className="text-primary font-medium">{t.home.transparency}</span>,{" "}
+                {t.home.and}{" "}
+                <span className="text-primary font-medium">{t.home.dueDiligence}</span>.
               </p>
             </motion.div>
 
@@ -84,7 +94,7 @@ export default function Home() {
                   size="lg"
                   className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 shadow-[0_0_30px_rgba(0,142,194,0.3)] hover:shadow-[0_0_40px_rgba(0,142,194,0.5)] transition-all duration-300 group"
                 >
-                  Explore Services
+                  {t.home.exploreServices}
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </Button>
               </Link>
@@ -94,7 +104,7 @@ export default function Home() {
                   variant="outline"
                   className="w-full sm:w-auto border-white/10 hover:border-primary/50 hover:bg-white/5 text-foreground backdrop-blur-sm transition-all duration-300"
                 >
-                  Contact Us
+                  {t.home.contactUs}
                 </Button>
               </Link>
             </motion.div>

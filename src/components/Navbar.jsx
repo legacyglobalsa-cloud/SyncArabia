@@ -1,11 +1,16 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../i18n/translations";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { language, setLanguage } = useLanguage();
+  const t = translations[language];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -16,14 +21,17 @@ export default function Navbar() {
   useEffect(() => setOpen(false), [location]);
 
   const links = [
-    { to: "/", label: "Home", end: true },
-    { to: "/subsidiary", label: "Subsidiary Companies" },
-    { to: "/services", label: "Services" },
-    { to: "/clients", label: "Clients" },
-    { to: "/about", label: "About" },
-    { to: "/partnerships", label: "Partnership" },
-    { to: "/contact", label: "Contact" },
+    { to: "/", label: t.nav.home, end: true },
+    { to: "/subsidiary", label: t.nav.subsidiary },
+    { to: "/services", label: t.nav.services },
+    { to: "/clients", label: t.nav.clients },
+    { to: "/about", label: t.nav.about },
+    { to: "/partnerships", label: t.nav.partnerships },
+    { to: "/contact", label: t.nav.contact },
   ];
+
+  const langFlags = { en: "EN", ar: "AR", vi: "VI" };
+  const langLabels = { en: t.common.english, ar: t.common.arabic, vi: t.common.vietnamese };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
@@ -78,6 +86,47 @@ export default function Navbar() {
             </NavLink>
           ))}
         </nav>
+
+        {/* Language Switcher (Desktop) */}
+        <div className="hidden lg:flex relative">
+          <button
+            onClick={() => setLangOpen(!langOpen)}
+            className="flex items-center gap-1.5 px-3 py-2 rounded-full bg-white/[0.04] border border-white/[0.06] text-white/60 hover:text-white hover:bg-white/[0.08] transition-all duration-300 text-[13px] font-medium"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="size-4">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M2 12h20" />
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+            </svg>
+            {langFlags[language]}
+          </button>
+          <AnimatePresence>
+            {langOpen && (
+              <motion.div
+                initial={{ opacity: 0, y: 8, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 8, scale: 0.95 }}
+                transition={{ duration: 0.15 }}
+                className="absolute top-full right-0 mt-2 w-40 rounded-xl bg-black/90 backdrop-blur-2xl border border-white/[0.08] shadow-2xl shadow-black/60 overflow-hidden z-50"
+              >
+                {Object.entries(langLabels).map(([code, label]) => (
+                  <button
+                    key={code}
+                    onClick={() => { setLanguage(code); setLangOpen(false); }}
+                    className={`w-full text-left px-4 py-2.5 text-sm transition-colors ${
+                      language === code
+                        ? "bg-primary/15 text-primary font-semibold"
+                        : "text-white/60 hover:bg-white/[0.06] hover:text-white"
+                    }`}
+                  >
+                    <span className="font-mono text-xs mr-2 opacity-50">{langFlags[code]}</span>
+                    {label}
+                  </button>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
 
         {/* Portal button */}
         <a
@@ -176,6 +225,26 @@ export default function Navbar() {
                 >
                   Portal
                 </a>
+
+                {/* Language Switcher (Mobile) */}
+                <div className="mt-4 pt-4 border-t border-white/[0.06]">
+                  <p className="text-xs text-white/30 uppercase tracking-wider mb-3 px-1">{t.common.language}</p>
+                  <div className="flex gap-2">
+                    {Object.entries(langLabels).map(([code, label]) => (
+                      <button
+                        key={code}
+                        onClick={() => { setLanguage(code); setOpen(false); }}
+                        className={`flex-1 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 ${
+                          language === code
+                            ? "bg-primary/15 text-primary border border-primary/20"
+                            : "text-white/40 bg-white/[0.03] border border-white/[0.06] hover:text-white"
+                        }`}
+                      >
+                        {langFlags[code]}
+                      </button>
+                    ))}
+                  </div>
+                </div>
               </nav>
             </motion.div>
           </motion.div>

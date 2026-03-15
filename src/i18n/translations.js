@@ -55,6 +55,168 @@ export const translations = {
       description:
         "Our diverse portfolio of companies delivering excellence across various sectors.",
       learnMore: "Learn More",
+      subsidiaryCards: {
+        keyServicesLabel: "Key Services & Capabilities",
+        divisionText:
+          "is a division of Sync Arabia Holdings, delivering specialized solutions in the",
+        sectorSuffix: "sector.",
+        syncManpower: {
+          name: "Sync Manpower Recruitment",
+          sector: "Recruitment & Manpower",
+          description:
+            "Comprehensive recruitment and manpower solutions, connecting businesses with qualified professionals across industries.",
+          details: [
+            "AI-enhanced talent sourcing and screening",
+            "Local and overseas manpower deployment",
+            "Workforce planning and candidate matching",
+            "Pre-deployment guidance and support",
+          ],
+        },
+        syncEntertainment: {
+          name: "Sync Entertainment",
+          sector: "Entertainment, F&B & Events",
+          description:
+            "Full-spectrum entertainment, food & beverage, and events management services for memorable experiences.",
+          details: [
+            "Event planning and management",
+            "Food & beverage operations",
+            "Entertainment production",
+            "Venue sourcing and coordination",
+          ],
+        },
+        syncFuels: {
+          name: "SyncFuels",
+          sector: "Oil & Gas",
+          description:
+            "Facilitating oil and gas trading, connecting verified suppliers with qualified buyers worldwide.",
+          details: [
+            "Crude oil and refined products facilitation",
+            "Supplier and buyer matching",
+            "Transaction structuring and coordination",
+            "Documentation and compliance support",
+          ],
+        },
+        syncBuild: {
+          name: "Sync Build",
+          sector: "Construction Conceptualization",
+          description:
+            "Construction conceptualization and project development, transforming visions into built reality.",
+          details: [
+            "General contracting and turnkey projects",
+            "Smart home and building systems",
+            "Space-saving solutions and custom design",
+            "Advanced construction concepts",
+          ],
+        },
+        syncInnovate: {
+          name: "Sync Innovate",
+          sector: "Innovation & Technology",
+          description:
+            "Cutting-edge technology solutions including AI, software development, and digital transformation services.",
+          details: [
+            "AI solutions and automation",
+            "App and web development",
+            "Smart home and IoT systems",
+            "AR/VR technologies and consulting",
+          ],
+        },
+        syncFacility: {
+          name: "Sync Facility Management",
+          sector: "Facility Management",
+          description:
+            "Smart facility care and integrated maintenance solutions for commercial, residential, and industrial spaces.",
+          details: [
+            "Cleaning and janitorial solutions",
+            "Smart maintenance and monitoring",
+            "Preventive and corrective maintenance",
+            "Hygiene programs and eco-smart solutions",
+          ],
+        },
+        syncLogistics: {
+          name: "Sync Logistics",
+          sector: "Logistics & Supply Chain",
+          description:
+            "End-to-end logistics and supply chain management with smart tracking and efficient delivery solutions.",
+          details: [
+            "Express delivery and freight solutions",
+            "Warehousing and inventory management",
+            "AI-powered route optimization",
+            "E-commerce fulfillment services",
+          ],
+        },
+        syncShop: {
+          name: "Sync Shop",
+          sector: "E-Commerce Platform Management",
+          description:
+            "E-commerce platform management and retail distribution solutions for online and offline markets.",
+          details: [
+            "Online store management",
+            "Dynamic pricing and promotions",
+            "Inventory optimization with AI",
+            "Digital shopping experience",
+          ],
+        },
+        syncDeal: {
+          name: "Sync Deal",
+          sector: "Trade Import & Export",
+          description:
+            "International trading, import & export facilitation, and global sourcing with compliance and quality assurance.",
+          details: [
+            "Global sourcing and trading",
+            "Import and export management",
+            "Saudi product registration and compliance",
+            "Intermediary and facilitation services",
+          ],
+        },
+        syncLand: {
+          name: "Sync Land",
+          sector: "Real Estate Management",
+          description:
+            "Real estate development, sales, and property management connecting investors with premium opportunities.",
+          details: [
+            "Global real estate connectivity",
+            "Investment advisory services",
+            "AI-powered property matching",
+            "Transaction support and facilitation",
+          ],
+        },
+        syncLink: {
+          name: "Sync Link",
+          sector: "Travel & Leisure",
+          description:
+            "Travel and leisure solutions providing seamless travel experiences and lifestyle services.",
+          details: [
+            "Transportation and accommodation management",
+            "Travel itinerary planning",
+            "Airline reservations and coordination",
+            "24/7 travel support and assistance",
+          ],
+        },
+        syncFit: {
+          name: "Sync Fit",
+          sector: "Health and Wellness",
+          description:
+            "Health, fitness, and wellness management including beauty services, fitness programs, and wellness solutions.",
+          details: [
+            "Professional beauty and wellness services",
+            "Premium product distribution",
+            "Fitness and transformation programs",
+            "AI-driven personalized solutions",
+          ],
+        },
+        syncTraining: {
+          name: "Sync Training",
+          sector: "Training & Development Centers",
+          description:
+            "Training and development centers including disaster-like training & rescue projects and specialized educational programs.",
+          details: [
+            "Disaster preparedness and rescue training",
+            "Professional development programs",
+            "Specialized skill-building courses",
+            "School of Rock music education",
+          ],
+        },
+      },
 
       // Company NAMES (for dialog titles)
       legaBuildName: "LEGABUILD",
@@ -1115,7 +1277,8 @@ export const translations = {
       titlePart2: "Solutions",
       subtitle:
         "SYNC Arabia operates as a structured commercial engine—connecting capital, projects, companies, and execution into one integrated ecosystem through",
-      subtitleHighlight: "facilitation, consultancy, recruitment, and sector-based execution",
+      subtitleHighlight:
+        "facilitation, consultancy, recruitment, and sector-based execution",
       subtitleEnd: "across industries.",
       coreServicesTitle: "Our Core",
       coreServicesHighlight: "Service Offerings",
@@ -1365,6 +1528,168 @@ export const translations = {
       description:
         "محفظتنا المتنوعة من الشركات التي تقدم التميز في مختلف القطاعات.",
       learnMore: "اعرف المزيد",
+      subsidiaryCards: {
+        keyServicesLabel: "الخدمات والقدرات الرئيسية",
+        divisionText:
+          "هو قسم من شركة سينك أرابيا القابضة، يقدم حلولاً متخصصة في قطاع",
+        sectorSuffix: ".",
+        syncManpower: {
+          name: "سينك للتوظيف",
+          description:
+            "حلول التوظيف والقوى العاملة الشاملة، ربط الشركات بالمهنيين المؤهلين في مختلف الصناعات.",
+          sector: "التوظيف والقوى العاملة",
+          details: [
+            "استقطاب المواهب والفحص المعزز بالذكاء الاصطناعي",
+            "نشر القوى العاملة المحلية والخارجية",
+            "تخطيط القوى العاملة ومطابقة المرشحين",
+            "التوجيه والدعم قبل النشر",
+          ],
+        },
+        syncEntertainment: {
+          name: "سينك للترفيه",
+          description:
+            "خدمات الترفيه والأغذية والمشروبات وإدارة الفعاليات الشاملة لتجارب لا تُنسى.",
+          sector: "الترفيه والأغذية والمشروبات والفعاليات",
+          details: [
+            "تخطيط وإدارة الفعاليات",
+            "عمليات الأغذية والمشروبات",
+            "إنتاج الترفيه",
+            "توفير وتنسيق الأماكن",
+          ],
+        },
+        syncFuels: {
+          name: "سينك للوقود",
+          description:
+            "تسهيل تجارة النفط والغاز، ربط الموردين المعتمدين بالمشترين المؤهلين حول العالم.",
+          sector: "النفط والغاز",
+          details: [
+            "تسهيل النفط الخام والمنتجات المكررة",
+            "مطابقة الموردين والمشترين",
+            "هيكلة المعاملات والتنسيق",
+            "دعم التوثيق والامتثال",
+          ],
+        },
+        syncBuild: {
+          name: "سينك للبناء",
+          description:
+            "تصور البناء وتطوير المشاريع، تحويل الرؤى إلى واقع مبني.",
+          sector: "تصور البناء",
+          details: [
+            "المقاولات العامة والمشاريع الجاهزة",
+            "أنظمة المنازل والمباني الذكية",
+            "حلول توفير المساحة والتصميم المخصص",
+            "مفاهيم البناء المتقدمة",
+          ],
+        },
+        syncInnovate: {
+          name: "سينك للابتكار",
+          description:
+            "حلول تكنولوجية متطورة تشمل الذكاء الاصطناعي وتطوير البرمجيات وخدمات التحول الرقمي.",
+          sector: "الابتكار والتكنولوجيا",
+          details: [
+            "حلول الذكاء الاصطناعي والأتمتة",
+            "تطوير التطبيقات والمواقع",
+            "أنظمة المنازل الذكية وإنترنت الأشياء",
+            "تقنيات الواقع المعزز/الافتراضي والاستشارات",
+          ],
+        },
+        syncFacility: {
+          name: "سينك لإدارة المرافق",
+          description:
+            "رعاية المرافق الذكية وحلول الصيانة المتكاملة للمساحات التجارية والسكنية والصناعية.",
+          sector: "إدارة المرافق",
+          details: [
+            "حلول التنظيف والنظافة",
+            "الصيانة والمراقبة الذكية",
+            "الصيانة الوقائية والتصحيحية",
+            "برامج النظافة والحلول البيئية الذكية",
+          ],
+        },
+        syncLogistics: {
+          name: "سينك للخدمات اللوجستية",
+          description:
+            "إدارة الخدمات اللوجستية وسلسلة التوريد الشاملة مع التتبع الذكي وحلول التوصيل الفعالة.",
+          sector: "الخدمات اللوجستية وسلسلة التوريد",
+          details: [
+            "حلول التوصيل السريع والشحن",
+            "التخزين وإدارة المخزون",
+            "تحسين المسارات بالذكاء الاصطناعي",
+            "خدمات تلبية التجارة الإلكترونية",
+          ],
+        },
+        syncShop: {
+          name: "سينك شوب",
+          description:
+            "إدارة منصات التجارة الإلكترونية وحلول التوزيع بالتجزئة للأسواق الإلكترونية والتقليدية.",
+          sector: "إدارة منصات التجارة الإلكترونية",
+          details: [
+            "إدارة المتاجر الإلكترونية",
+            "التسعير الديناميكي والعروض الترويجية",
+            "تحسين المخزون بالذكاء الاصطناعي",
+            "تجربة تسوق رقمية",
+          ],
+        },
+        syncDeal: {
+          name: "سينك ديل",
+          description:
+            "التجارة الدولية وتسهيل الاستيراد والتصدير والتوريد العالمي مع الامتثال وضمان الجودة.",
+          sector: "الاستيراد والتصدير التجاري",
+          details: [
+            "التوريد والتجارة العالمية",
+            "إدارة الاستيراد والتصدير",
+            "تسجيل المنتجات السعودية والامتثال",
+            "خدمات الوساطة والتسهيل",
+          ],
+        },
+        syncLand: {
+          name: "سينك للعقارات",
+          description:
+            "تطوير العقارات والمبيعات وإدارة الممتلكات ربط المستثمرين بالفرص المميزة.",
+          sector: "إدارة العقارات",
+          details: [
+            "الربط العقاري العالمي",
+            "خدمات الاستشارات الاستثمارية",
+            "مطابقة العقارات بالذكاء الاصطناعي",
+            "دعم المعاملات والتسهيل",
+          ],
+        },
+        syncLink: {
+          name: "سينك لينك",
+          description:
+            "حلول السفر والترفيه التي توفر تجارب سفر سلسة وخدمات نمط الحياة.",
+          sector: "السفر والترفيه",
+          details: [
+            "إدارة النقل والإقامة",
+            "تخطيط مسارات السفر",
+            "حجوزات الطيران والتنسيق",
+            "دعم السفر على مدار الساعة",
+          ],
+        },
+        syncFit: {
+          name: "سينك فيت",
+          description:
+            "إدارة الصحة واللياقة والعافية بما في ذلك خدمات التجميل وبرامج اللياقة وحلول العافية.",
+          sector: "الصحة والعافية",
+          details: [
+            "خدمات التجميل والعافية المهنية",
+            "توزيع المنتجات المتميزة",
+            "برامج اللياقة والتحول",
+            "حلول مخصصة بالذكاء الاصطناعي",
+          ],
+        },
+        syncTraining: {
+          name: "سينك للتدريب",
+          description:
+            "مراكز التدريب والتطوير بما في ذلك التدريب على الكوارث والإنقاذ والبرامج التعليمية المتخصصة.",
+          sector: "مراكز التدريب والتطوير",
+          details: [
+            "التدريب على الاستعداد للكوارث والإنقاذ",
+            "برامج التطوير المهني",
+            "دورات بناء المهارات المتخصصة",
+            "التعليم الموسيقي سكول أوف روك",
+          ],
+        },
+      },
 
       legaBuildName: "LEGABUILD",
       legaCreativName: "LEGACREATIV",
@@ -2633,6 +2958,168 @@ export const translations = {
       description:
         "Danh mục đa dạng các công ty của chúng tôi mang lại sự xuất sắc trong nhiều lĩnh vực khác nhau.",
       learnMore: "Tìm Hiểu Thêm",
+      subsidiaryCards: {
+        keyServicesLabel: "Dịch Vụ & Năng Lực Chính",
+        divisionText:
+          "là một bộ phận của Sync Arabia Holdings, cung cấp các giải pháp chuyên biệt trong lĩnh vực",
+        sectorSuffix: ".",
+        syncManpower: {
+          name: "Sync Tuyển Dụng",
+          sector: "Tuyển Dụng & Nhân Lực",
+          description:
+            "Giải pháp tuyển dụng và nhân lực toàn diện, kết nối doanh nghiệp với các chuyên gia đủ trình độ trong mọi ngành.",
+          details: [
+            "Tìm kiếm và sàng lọc nhân tài hỗ trợ AI",
+            "Triển khai nhân lực trong nước và nước ngoài",
+            "Lập kế hoạch nhân lực và ghép ứng viên",
+            "Hướng dẫn và hỗ trợ trước triển khai",
+          ],
+        },
+        syncEntertainment: {
+          name: "Sync Giải Trí",
+          sector: "Giải Trí, F&B & Sự Kiện",
+          description:
+            "Dịch vụ giải trí, thực phẩm và đồ uống, quản lý sự kiện toàn diện cho những trải nghiệm đáng nhớ.",
+          details: [
+            "Lập kế hoạch và quản lý sự kiện",
+            "Vận hành thực phẩm & đồ uống",
+            "Sản xuất giải trí",
+            "Tìm kiếm và phối hợp địa điểm",
+          ],
+        },
+        syncFuels: {
+          name: "SyncFuels",
+          sector: "Dầu Khí",
+          description:
+            "Hỗ trợ giao dịch dầu khí, kết nối nhà cung cấp đã xác minh với người mua đủ điều kiện trên toàn thế giới.",
+          details: [
+            "Hỗ trợ dầu thô và sản phẩm tinh chế",
+            "Ghép đôi nhà cung cấp và người mua",
+            "Cấu trúc giao dịch và phối hợp",
+            "Hỗ trợ tài liệu và tuân thủ",
+          ],
+        },
+        syncBuild: {
+          name: "Sync Xây Dựng",
+          sector: "Khái Niệm Xây Dựng",
+          description:
+            "Khái niệm hóa xây dựng và phát triển dự án, biến tầm nhìn thành hiện thực.",
+          details: [
+            "Tổng thầu và dự án trọn gói",
+            "Hệ thống nhà và tòa nhà thông minh",
+            "Giải pháp tiết kiệm không gian và thiết kế tùy chỉnh",
+            "Khái niệm xây dựng tiên tiến",
+          ],
+        },
+        syncInnovate: {
+          name: "Sync Đổi Mới",
+          sector: "Đổi Mới & Công Nghệ",
+          description:
+            "Giải pháp công nghệ tiên tiến bao gồm AI, phát triển phần mềm và dịch vụ chuyển đổi số.",
+          details: [
+            "Giải pháp AI và tự động hóa",
+            "Phát triển ứng dụng và web",
+            "Hệ thống nhà thông minh và IoT",
+            "Công nghệ AR/VR và tư vấn",
+          ],
+        },
+        syncFacility: {
+          name: "Sync Quản Lý Cơ Sở",
+          sector: "Quản Lý Cơ Sở",
+          description:
+            "Chăm sóc cơ sở thông minh và giải pháp bảo trì tích hợp cho không gian thương mại, dân cư và công nghiệp.",
+          details: [
+            "Giải pháp vệ sinh và dọn dẹp",
+            "Bảo trì và giám sát thông minh",
+            "Bảo trì phòng ngừa và sửa chữa",
+            "Chương trình vệ sinh và giải pháp sinh thái thông minh",
+          ],
+        },
+        syncLogistics: {
+          name: "Sync Hậu Cần",
+          sector: "Hậu Cần & Chuỗi Cung Ứng",
+          description:
+            "Quản lý hậu cần và chuỗi cung ứng toàn diện với theo dõi thông minh và giải pháp giao hàng hiệu quả.",
+          details: [
+            "Giải pháp giao hàng nhanh và vận chuyển hàng hóa",
+            "Lưu kho và quản lý hàng tồn kho",
+            "Tối ưu hóa tuyến đường bằng AI",
+            "Dịch vụ hoàn tất thương mại điện tử",
+          ],
+        },
+        syncShop: {
+          name: "Sync Shop",
+          sector: "Quản Lý Nền Tảng Thương Mại Điện Tử",
+          description:
+            "Quản lý nền tảng thương mại điện tử và giải pháp phân phối bán lẻ cho thị trường trực tuyến và ngoại tuyến.",
+          details: [
+            "Quản lý cửa hàng trực tuyến",
+            "Định giá động và khuyến mãi",
+            "Tối ưu hóa hàng tồn kho bằng AI",
+            "Trải nghiệm mua sắm kỹ thuật số",
+          ],
+        },
+        syncDeal: {
+          name: "Sync Deal",
+          sector: "Thương Mại Xuất Nhập Khẩu",
+          description:
+            "Thương mại quốc tế, hỗ trợ xuất nhập khẩu và tìm nguồn cung ứng toàn cầu với tuân thủ và đảm bảo chất lượng.",
+          details: [
+            "Tìm nguồn cung ứng và thương mại toàn cầu",
+            "Quản lý xuất nhập khẩu",
+            "Đăng ký sản phẩm Saudi và tuân thủ",
+            "Dịch vụ trung gian và hỗ trợ",
+          ],
+        },
+        syncLand: {
+          name: "Sync Land",
+          sector: "Quản Lý Bất Động Sản",
+          description:
+            "Phát triển bất động sản, bán hàng và quản lý tài sản kết nối nhà đầu tư với cơ hội cao cấp.",
+          details: [
+            "Kết nối bất động sản toàn cầu",
+            "Dịch vụ tư vấn đầu tư",
+            "Ghép đôi bất động sản bằng AI",
+            "Hỗ trợ giao dịch và tạo điều kiện",
+          ],
+        },
+        syncLink: {
+          name: "Sync Link",
+          sector: "Du Lịch & Giải Trí",
+          description:
+            "Giải pháp du lịch và giải trí cung cấp trải nghiệm du lịch liền mạch và dịch vụ phong cách sống.",
+          details: [
+            "Quản lý vận chuyển và lưu trú",
+            "Lập kế hoạch hành trình du lịch",
+            "Đặt vé máy bay và phối hợp",
+            "Hỗ trợ du lịch 24/7",
+          ],
+        },
+        syncFit: {
+          name: "Sync Fit",
+          sector: "Sức Khỏe và Chăm Sóc Sức Khỏe",
+          description:
+            "Quản lý sức khỏe, thể dục và chăm sóc sức khỏe bao gồm dịch vụ làm đẹp, chương trình thể dục và giải pháp sức khỏe.",
+          details: [
+            "Dịch vụ làm đẹp và chăm sóc sức khỏe chuyên nghiệp",
+            "Phân phối sản phẩm cao cấp",
+            "Chương trình thể dục và chuyển đổi",
+            "Giải pháp cá nhân hóa bằng AI",
+          ],
+        },
+        syncTraining: {
+          name: "Sync Đào Tạo",
+          sector: "Trung Tâm Đào Tạo & Phát Triển",
+          description:
+            "Trung tâm đào tạo và phát triển bao gồm đào tạo thiên tai và cứu hộ và các chương trình giáo dục chuyên biệt.",
+          details: [
+            "Đào tạo phòng chống thiên tai và cứu hộ",
+            "Chương trình phát triển chuyên nghiệp",
+            "Khóa học xây dựng kỹ năng chuyên biệt",
+            "Giáo dục âm nhạc School of Rock",
+          ],
+        },
+      },
 
       legaBuildName: "LEGABUILD",
       legaCreativName: "LEGACREATIV",

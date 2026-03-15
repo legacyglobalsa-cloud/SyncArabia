@@ -14,6 +14,8 @@ import {
   Play,
 } from "lucide-react";
 import { useRef, useState } from "react";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../i18n/translations";
 
 const Reveal = ({ children, delay = 0, once = true }) => {
   return (
@@ -35,6 +37,8 @@ const Reveal = ({ children, delay = 0, once = true }) => {
 export default function About() {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const { language } = useLanguage();
+  const t = translations[language];
 
   const handlePlayVideo = () => {
     if (videoRef.current) {
@@ -44,21 +48,21 @@ export default function About() {
   };
 
   const coreValues = [
-    { title: "Trust", desc: "We prioritize trust above all — building relationships where every stakeholder can operate with confidence.", icon: Shield },
-    { title: "Service Excellence", desc: "We operate with discipline under the principle of under-promise and over-deliver in everything we do.", icon: Star },
-    { title: "Partnership", desc: "We believe in long-term partnerships over short-term gains, creating mutual value that lasts.", icon: Handshake },
-    { title: "Problem-Solving", desc: "We identify real market problems and solve them through structured, scalable business solutions.", icon: Check },
-    { title: "Impact", desc: "We create measurable economic value and long-term impact in the Saudi business community.", icon: Globe },
-    { title: "Unity", desc: "We connect businesses, manpower, capital, and opportunities into one integrated ecosystem.", icon: Compass },
+    { title: t.about.coreValues?.integrityTitle || "Trust", desc: t.about.coreValues?.integrityDesc || "We prioritize trust above all — building relationships where every stakeholder can operate with confidence.", icon: Shield },
+    { title: t.about.coreValues?.serviceTitle || "Service Excellence", desc: t.about.coreValues?.serviceDesc || "We operate with discipline under the principle of under-promise and over-deliver in everything we do.", icon: Star },
+    { title: t.about.coreValues?.unityTitle || "Partnership", desc: t.about.coreValues?.unityDesc || "We believe in long-term partnerships over short-term gains, creating mutual value that lasts.", icon: Handshake },
+    { title: t.about.coreValues?.stewardshipTitle || "Problem-Solving", desc: t.about.coreValues?.stewardshipDesc || "We identify real market problems and solve them through structured, scalable business solutions.", icon: Check },
+    { title: t.about.coreValues?.excellenceTitle || "Impact", desc: t.about.coreValues?.excellenceDesc || "We create measurable economic value and long-term impact in the Saudi business community.", icon: Globe },
+    { title: t.about.coreValues?.faithTitle || "Unity", desc: t.about.coreValues?.faithDesc || "We connect businesses, manpower, capital, and opportunities into one integrated ecosystem.", icon: Compass },
   ];
 
   const advantages = [
-    { icon: ShieldCheck, title: "Due Diligence & Verification", desc: "Rigorous screening and verification of all parties — minimizing risk and building trust." },
-    { icon: Handshake, title: "Deal Origination Hub", desc: "Structured project access and facilitation connecting contractors, investors, and opportunities." },
-    { icon: BarChart3, title: "Investment Gateway", desc: "Inbound and outbound investment facilitation with feasibility assessment and structuring." },
-    { icon: Users, title: "Corporate Expansion Engine", desc: "Market entry advisory, partnership development, and operational restructuring for growth." },
-    { icon: Rocket, title: "Digital Platform", desc: "Proprietary platform with dashboards, KYC workflows, project tracking, and opportunity intelligence." },
-    { icon: Truck, title: "End-to-End Execution", desc: "From identification to stakeholder matching to structured execution — we handle the full lifecycle." },
+    { icon: ShieldCheck, title: t.about.whyChooseItems?.item1Title || "Due Diligence & Verification", desc: t.about.whyChooseItems?.item1Desc || "Rigorous screening and verification of all parties — minimizing risk and building trust." },
+    { icon: Handshake, title: t.about.whyChooseItems?.item2Title || "Deal Origination Hub", desc: t.about.whyChooseItems?.item2Desc || "Structured project access and facilitation connecting contractors, investors, and opportunities." },
+    { icon: BarChart3, title: t.about.whyChooseItems?.item3Title || "Investment Gateway", desc: t.about.whyChooseItems?.item3Desc || "Inbound and outbound investment facilitation with feasibility assessment and structuring." },
+    { icon: Users, title: t.about.whyChooseItems?.item4Title || "Corporate Expansion Engine", desc: t.about.whyChooseItems?.item4Desc || "Market entry advisory, partnership development, and operational restructuring for growth." },
+    { icon: Rocket, title: t.about.whyChooseItems?.item5Title || "Digital Platform", desc: t.about.whyChooseItems?.item5Desc || "Proprietary platform with dashboards, KYC workflows, project tracking, and opportunity intelligence." },
+    { icon: Truck, title: t.about.whyChooseItems?.item6Title || "End-to-End Execution", desc: t.about.whyChooseItems?.item6Desc || "From identification to stakeholder matching to structured execution — we handle the full lifecycle." },
   ];
 
   return (
@@ -70,22 +74,20 @@ export default function About() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 pt-28 pb-20 md:pt-32 space-y-20 md:space-y-32">
         
-        {/* HERO — Split layout with logo */}
+        {/* HERO */}
         <section>
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <Reveal>
-                <p className="text-primary font-semibold tracking-widest uppercase text-sm mb-4">About Us</p>
+                <p className="text-primary font-semibold tracking-widest uppercase text-sm mb-4">{t.about.pageTitle}</p>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] mb-6">
-                  A Problem-Solving<br/>
-                  <span className="text-gradient-gold">Commercial Ecosystem</span>
+                  {t.about.whyChooseTitle}<br/>
+                  <span className="text-gradient-gold">{t.about.pageTitleHighlight}</span>
                 </h1>
               </Reveal>
               <Reveal delay={0.1}>
                 <p className="text-lg text-white/50 leading-relaxed mb-8 max-w-lg">
-                  SYNC Arabia is a problem-solving commercial, investment, and execution ecosystem 
-                  designed to bridge critical gaps in the Saudi business environment. We connect contractors to projects, 
-                  investors to opportunities, and capital to execution platforms — all within one integrated ecosystem.
+                  {t.about.intro}
                 </p>
               </Reveal>
               <Reveal delay={0.2}>
@@ -155,13 +157,13 @@ export default function About() {
           </Reveal>
         </section>
 
-        {/* WHY CHOOSE US — Bento-style grid */}
+        {/* WHY CHOOSE US */}
         <section>
           <Reveal>
             <div className="mb-12">
-              <p className="text-primary font-semibold tracking-widest uppercase text-sm mb-3">Why Us</p>
+              <p className="text-primary font-semibold tracking-widest uppercase text-sm mb-3">{t.about.whyChooseTitle}</p>
               <h2 className="text-3xl md:text-5xl font-bold">
-                Why Choose <span className="text-gradient-gold">SyncArabia</span>?
+                {t.about.whyChooseTitle} <span className="text-gradient-gold">{t.about.whyChooseTitleHighlight}</span>?
               </h2>
             </div>
           </Reveal>
@@ -188,13 +190,13 @@ export default function About() {
           </div>
         </section>
 
-        {/* VISION & MISSION — Side by side cards */}
+        {/* VISION & MISSION */}
         <section>
           <Reveal>
             <div className="mb-12">
-              <p className="text-accent font-semibold tracking-widest uppercase text-sm mb-3">Direction</p>
+              <p className="text-accent font-semibold tracking-widest uppercase text-sm mb-3">{t.about.visionMissionTitle}</p>
               <h2 className="text-3xl md:text-5xl font-bold">
-                Vision & <span className="text-gradient-gold">Mission</span>
+                <span className="text-gradient-gold">{t.about.visionMissionTitle}</span>
               </h2>
             </div>
           </Reveal>
@@ -203,35 +205,31 @@ export default function About() {
             <Reveal delay={0.05}>
               <div className="relative p-8 md:p-10 rounded-2xl bg-gradient-to-br from-primary/10 via-transparent to-transparent border border-primary/15 h-full">
                 <div className="w-3 h-12 rounded-full bg-primary mb-6" />
-                <h3 className="text-2xl font-bold text-white mb-4">Our Vision</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">{t.about.visionLabel}</h3>
                 <p className="text-white/50 leading-relaxed text-lg">
-                  To build a business ecosystem that creates happy employees, trusted suppliers, confident investors,
-                  empowered partners, satisfied clients, and stronger communities — while generating measurable
-                  economic value and long-term impact in the Saudi business environment.
+                  {t.about.visionText}
                 </p>
               </div>
             </Reveal>
             <Reveal delay={0.1}>
               <div className="relative p-8 md:p-10 rounded-2xl bg-gradient-to-br from-accent/10 via-transparent to-transparent border border-accent/15 h-full">
                 <div className="w-3 h-12 rounded-full bg-accent mb-6" />
-                <h3 className="text-2xl font-bold text-white mb-4">Our Mission</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">{t.about.missionLabel}</h3>
                 <p className="text-white/50 leading-relaxed text-lg">
-                  To identify real market problems and solve them through structured, scalable business solutions.
-                  To connect businesses, manpower, capital, and opportunities into one integrated ecosystem — 
-                  prioritizing trust, service excellence, and long-term partnerships over short-term gains.
+                  {t.about.missionText}
                 </p>
               </div>
             </Reveal>
           </div>
         </section>
 
-        {/* CORE VALUES — Grid with number accent */}
+        {/* CORE VALUES */}
         <section>
           <Reveal>
             <div className="text-center mb-12">
-              <p className="text-primary font-semibold tracking-widest uppercase text-sm mb-3">Principles</p>
+              <p className="text-primary font-semibold tracking-widest uppercase text-sm mb-3">{t.about.coreValuesTitle}</p>
               <h2 className="text-3xl md:text-5xl font-bold">
-                Our Core <span className="text-gradient-gold">Values</span>
+                {t.about.coreValuesTitle} <span className="text-gradient-gold">{t.about.coreValuesTitleHighlight}</span>
               </h2>
             </div>
           </Reveal>
@@ -260,17 +258,17 @@ export default function About() {
           </div>
         </section>
 
-        {/* COMPETITIVE EDGE — Full width banner */}
+        {/* COMPETITIVE EDGE */}
         <section>
           <Reveal>
             <div className="relative rounded-3xl overflow-hidden border border-white/[0.04] bg-gradient-to-r from-primary/10 via-transparent to-accent/5 p-8 md:p-14">
               <div className="absolute top-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px] -translate-y-1/2 -translate-x-1/3 pointer-events-none" />
               <div className="relative z-10">
                 <h3 className="font-extrabold text-3xl md:text-4xl text-white mb-3">
-                  Our Competitive <span className="text-gradient-gold">Edge</span>
+                  {t.about.competitiveEdgeTitle} <span className="text-gradient-gold">Edge</span>
                 </h3>
                 <p className="text-lg text-white/50 mb-8 max-w-2xl">
-                  SYNC Arabia solves three structural gaps in the market: contractors without access, investors without trust, and projects without funding.
+                  {t.about.whyChooseSubtitle}
                 </p>
                 <div className="grid md:grid-cols-3 gap-4">
                   {[

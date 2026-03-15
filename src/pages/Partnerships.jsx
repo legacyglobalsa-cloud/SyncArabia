@@ -2,51 +2,56 @@ import { ArrowRight, ExternalLink } from "lucide-react";
 import { Button } from "../components/ui/button";
 import Reveal from "../components/Reveal";
 import * as FM from "framer-motion";
-
-const partners = [
-  {
-    name: "Gimona Organic Farm",
-    tagline: "From Farm to Table, Naturally",
-    description: "In partnership with Kinglands Trading Production Services, SyncArabia collaborates with Gimona Organic Farm to bring premium, certified organic agricultural products to the Arabian market.",
-    detail: "This partnership ensures consumers and businesses in the region have access to high-quality, sustainably sourced organic produce.",
-    logo: "/Partnership/ImonaLogo.png",
-    url: "https://gimona.vn",
-    color: "#009456",
-    subtitle: "Kinglands Trading Production Services",
-  },
-  {
-    name: "Oasis 360 Media Solutions",
-    tagline: "360° Digital Solutions",
-    description: "Oasis 360 provides comprehensive media and digital marketing solutions to businesses across the region.",
-    detail: "Through this partnership, SyncArabia clients gain access to cutting-edge digital marketing strategies, brand development, and media production services.",
-    logo: "/Partnership/Oasis360 logo.png",
-    url: "https://wahatalfaten.com",
-    color: "#008EC2",
-    subtitle: "Wahat Al-Faten Group",
-  },
-  {
-    name: "Spectrum Engineering Solutions",
-    tagline: "Engineering Excellence for a Better Tomorrow",
-    description: "SES KSA specializes in engineering consulting, project management, and technical services across multiple sectors.",
-    detail: "This partnership brings world-class engineering expertise to SyncArabia's network of clients.",
-    logo: "/Partnership/sesksa.png",
-    url: "https://sesksa.com",
-    color: "#3b82f6",
-    subtitle: "Engineering & Technical Services",
-  },
-  {
-    name: "ABK Law Firm",
-    tagline: "Your Trusted Legal Partner",
-    description: "ABK Law provides comprehensive legal advisory services specializing in commercial law, corporate governance, and international business transactions.",
-    detail: "Through this partnership, SyncArabia clients receive expert legal guidance for their business operations and expansions.",
-    logo: "/Partnership/abklaw.png",
-    url: "https://abklaw.net/en/",
-    color: "#c4b5fd",
-    subtitle: "Legal Advisory & Consulting",
-  },
-];
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../i18n/translations";
 
 export default function Partnerships() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
+  const partners = [
+    {
+      name: t.partnerships.gimonaTitle,
+      tagline: t.partnerships.gimonaTagline,
+      description: t.partnerships.gimonaDesc1,
+      detail: t.partnerships.gimonaDesc2,
+      logo: "/Partnership/ImonaLogo.png",
+      url: "https://gimona.vn",
+      color: "#009456",
+      subtitle: "Kinglands Trading Production Services",
+    },
+    {
+      name: t.partnerships.oasisTitle,
+      tagline: t.partnerships.oasisTagline,
+      description: t.partnerships.oasisDesc1,
+      detail: t.partnerships.oasisDesc2,
+      logo: "/Partnership/Oasis360 logo.png",
+      url: "https://wahatalfaten.com",
+      color: "#008EC2",
+      subtitle: "Wahat Al-Faten Group",
+    },
+    {
+      name: t.partnerships.sesksaTitle || "Spectrum Engineering Solutions",
+      tagline: t.partnerships.sesksaTagline,
+      description: t.partnerships.sesksaDesc1,
+      detail: t.partnerships.sesksaDesc2,
+      logo: "/Partnership/sesksa.png",
+      url: "https://sesksa.com",
+      color: "#3b82f6",
+      subtitle: t.partnerships.sesksaSubtitle || "Spectrum Group",
+    },
+    {
+      name: t.partnerships.abklawTitle,
+      tagline: t.partnerships.abklawTagline,
+      description: t.partnerships.abklawDesc1,
+      detail: t.partnerships.abklawDesc2,
+      logo: "/Partnership/abklaw.png",
+      url: "https://abklaw.net/en/",
+      color: "#c4b5fd",
+      subtitle: t.partnerships.abklawSubtitle || "Legal Advisory & Consulting",
+    },
+  ];
+
   return (
     <div className="relative min-h-screen bg-[#050505] text-white overflow-hidden">
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-[#050505] via-[#050505] to-[#0A0A0A] pointer-events-none" />
@@ -55,7 +60,7 @@ export default function Partnerships() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 pt-28 pb-20 md:pt-32 md:pb-28">
         
-        {/* HEADER — Full width hero banner */}
+        {/* HEADER */}
         <section className="mb-20 md:mb-28">
           <FM.motion.div
             initial={{ opacity: 0, y: -30 }}
@@ -66,19 +71,19 @@ export default function Partnerships() {
             <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-72 h-72 bg-accent/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/3 pointer-events-none" />
             <div className="relative z-10 max-w-3xl">
-              <p className="text-primary font-semibold tracking-widest uppercase text-sm mb-4">Collaborations</p>
+              <p className="text-primary font-semibold tracking-widest uppercase text-sm mb-4">{t.partnerships.title}</p>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] mb-6">
-                Strategic<br/>
-                <span className="text-gradient-gold">Partnerships</span>
+                {t.partnerships.title}<br/>
+                <span className="text-gradient-gold">{t.partnerships.titleHighlight}</span>
               </h1>
               <p className="text-lg md:text-xl text-white/50 leading-relaxed max-w-2xl">
-                We collaborate with industry leaders across sectors and borders to deliver exceptional value and drive mutual growth.
+                {t.partnerships.description}
               </p>
             </div>
           </FM.motion.div>
         </section>
 
-        {/* PARTNER CARDS — Alternating left/right layout */}
+        {/* PARTNER CARDS */}
         <div className="space-y-10">
           {partners.map((partner, i) => (
             <Reveal delay={i * 0.1} key={partner.name}>
@@ -111,7 +116,7 @@ export default function Partnerships() {
                   <div className={`md:col-span-8 p-8 md:p-10 flex flex-col justify-center`}>
                     <div className="flex items-center gap-3 mb-1">
                       <div className="w-2 h-8 rounded-full" style={{ background: partner.color }} />
-                      <h3 className="text-2xl md:text-3xl font-bold text-white transition-colors duration-300" style={{ "--hover-color": partner.color }}>
+                      <h3 className="text-2xl md:text-3xl font-bold text-white transition-colors duration-300">
                         {partner.name}
                       </h3>
                     </div>
@@ -133,7 +138,7 @@ export default function Partnerships() {
                             boxShadow: `0 0 20px ${partner.color}33`,
                           }}
                         >
-                          Visit Website <ExternalLink className="ml-2 h-4 w-4" />
+                          {t.partnerships.visitWebsite} <ExternalLink className="ml-2 h-4 w-4" />
                         </Button>
                       </a>
                     </div>
@@ -152,11 +157,11 @@ export default function Partnerships() {
                 Become a <span className="text-gradient-gold">Partner</span>
               </h3>
               <p className="text-white/40 mb-6 max-w-lg mx-auto">
-                Interested in partnering with SyncArabia? We're always looking for strategic collaborations that create mutual value.
+                {t.partnerships.description}
               </p>
               <a href="/contact">
                 <Button size="lg" className="bg-primary text-primary-foreground font-bold hover:bg-primary/90 shadow-lg shadow-primary/20">
-                  Get In Touch <ArrowRight className="ml-2 h-4 w-4" />
+                  {t.contact?.send || "Get In Touch"} <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </a>
             </div>

@@ -2,11 +2,15 @@ import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useState } from "react";
 import Reveal from "../components/Reveal";
 import { Button } from "../components/ui/button";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../i18n/translations";
 
 export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const { language } = useLanguage();
+  const t = translations[language];
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -27,11 +31,11 @@ export default function Contact() {
         <Reveal>
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
-              Get in{" "}
-              <span className="text-gradient-gold">Touch</span>
+              {t.contact.title}{" "}
+              <span className="text-gradient-gold">{t.contact.titleHighlight}</span>
             </h1>
             <p className="text-lg text-white/40 max-w-2xl mx-auto leading-relaxed">
-              Ready to explore new opportunities? Let's start a conversation about how SyncArabia can help your business grow.
+              {t.contact.subtitle}
             </p>
             <div className="h-px w-32 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mt-8 opacity-70" />
           </div>
@@ -42,14 +46,14 @@ export default function Contact() {
           <div className="space-y-8">
             <Reveal delay={0.1}>
               <div className="bg-white/[0.02] p-8 rounded-2xl border border-white/[0.04]">
-                <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
+                <h3 className="text-2xl font-bold text-white mb-6">{t.contact.contactInfo}</h3>
                 <div className="space-y-6">
                   <div className="flex items-start gap-4 group">
                     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/10 group-hover:bg-primary/15 transition-colors">
                       <Phone className="size-5 text-primary" />
                     </div>
                     <div>
-                      <p className="text-sm text-white/40 mb-1">Phone</p>
+                      <p className="text-sm text-white/40 mb-1">{t.contact.phone}</p>
                       <p className="text-lg font-medium text-white">+966 50 360 2359</p>
                     </div>
                   </div>
@@ -59,7 +63,7 @@ export default function Contact() {
                       <Mail className="size-5 text-primary" />
                     </div>
                     <div>
-                      <p className="text-sm text-white/40 mb-1">Email</p>
+                      <p className="text-sm text-white/40 mb-1">{t.contact.email}</p>
                       <p className="text-lg font-medium text-white">info@syncarabia.com</p>
                     </div>
                   </div>
@@ -69,7 +73,7 @@ export default function Contact() {
                       <MapPin className="size-5 text-primary" />
                     </div>
                     <div>
-                      <p className="text-sm text-white/40 mb-1">Address</p>
+                      <p className="text-sm text-white/40 mb-1">{t.contact.address}</p>
                       <p className="text-lg font-medium text-white">Riyadh, Kingdom of Saudi Arabia</p>
                     </div>
                   </div>
@@ -100,15 +104,15 @@ export default function Contact() {
           {/* Contact Form */}
           <Reveal delay={0.3}>
             <div className="bg-white/[0.02] p-8 md:p-10 rounded-2xl border border-white/[0.04]">
-              <h3 className="text-2xl font-bold text-white mb-2">Send a Message</h3>
-              <p className="text-white/40 mb-8">Fill out the form and we'll get back to you shortly.</p>
+              <h3 className="text-2xl font-bold text-white mb-2">{t.contact.sendMessage}</h3>
+              <p className="text-white/40 mb-8">{t.contact.formSubtitle}</p>
 
               <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="space-y-2">
-                    <label className="text-sm font-medium text-white/60 ml-1">Name</label>
+                    <label className="text-sm font-medium text-white/60 ml-1">{t.contact.name}</label>
                   <input
                     className="w-full rounded-xl border border-white/[0.06] bg-white/[0.03] px-4 py-3 outline-none focus:border-primary/40 focus:ring-1 focus:ring-primary/40 transition-all text-white placeholder:text-white/20"
-                    placeholder="Your full name"
+                    placeholder={t.contact.namePlaceholder}
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     required
@@ -116,11 +120,11 @@ export default function Contact() {
                 </div>
 
                 <div className="space-y-2">
-                    <label className="text-sm font-medium text-white/60 ml-1">Email</label>
+                    <label className="text-sm font-medium text-white/60 ml-1">{t.contact.email}</label>
                   <input
                     type="email"
                     className="w-full rounded-xl border border-white/[0.06] bg-white/[0.03] px-4 py-3 outline-none focus:border-primary/40 focus:ring-1 focus:ring-primary/40 transition-all text-white placeholder:text-white/20"
-                    placeholder="you@company.com"
+                    placeholder={t.contact.emailPlaceholder}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
@@ -128,11 +132,11 @@ export default function Contact() {
                 </div>
 
                 <div className="space-y-2">
-                    <label className="text-sm font-medium text-white/60 ml-1">Message</label>
+                    <label className="text-sm font-medium text-white/60 ml-1">{t.contact.message}</label>
                   <textarea
                     rows={5}
                     className="w-full rounded-xl border border-white/[0.06] bg-white/[0.03] px-4 py-3 outline-none focus:border-primary/40 focus:ring-1 focus:ring-primary/40 transition-all text-white placeholder:text-white/20 resize-none"
-                    placeholder="Tell us about your business needs..."
+                    placeholder={t.contact.messagePlaceholder}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     required
@@ -144,7 +148,7 @@ export default function Contact() {
                   size="lg"
                   className="w-full bg-primary text-primary-foreground font-bold hover:bg-primary/90 shadow-lg shadow-primary/20 py-6 text-lg"
                 >
-                  Send Message <Send className="ml-2 size-5" />
+                  {t.contact.send} <Send className="ml-2 size-5" />
                 </Button>
               </form>
             </div>
