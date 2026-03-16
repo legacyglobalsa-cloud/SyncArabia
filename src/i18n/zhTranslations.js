@@ -1177,11 +1177,6 @@ export const zhTranslations = {
     privacy: "隐私政策",
     terms: "服务条款",
   },
-  splash: {
-    taglineWords: ["连接", "企业", "跨越", "整个", "阿拉伯", "地区！"],
-    highlightIndices: [1, 4],
-    progressLabel: "正在同步连接",
-  },
   common: {
     language: "语言",
     english: "英语",

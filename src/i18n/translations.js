@@ -1546,18 +1546,6 @@ export const translations = {
       privacy: "Privacy Policy",
       terms: "Terms of Service",
     },
-    splash: {
-      taglineWords: [
-        "Connecting",
-        "businesses",
-        "across",
-        "the",
-        "Arabian",
-        "region!",
-      ],
-      highlightIndices: [1, 5],
-      progressLabel: "Syncing connections",
-    },
     // Common
     common: {
       language: "Language",
@@ -3038,11 +3026,6 @@ export const translations = {
       copyright: "شركة ليجاسي جلوبال للخدمات التجارية. جميع الحقوق محفوظة.",
       privacy: "سياسة الخصوصية",
       terms: "شروط الخدمة",
-    },
-    splash: {
-      taglineWords: ["ربط", "الأعمال", "عبر", "المنطقة", "العربية", "بثقة"],
-      highlightIndices: [1, 4],
-      progressLabel: "جارِ مزامنة الروابط",
     },
     // Common
     common: {
@@ -4577,11 +4560,6 @@ export const translations = {
         "Công ty Dịch vụ Thương mại Legacy Global. Tất cả các quyền được bảo lưu.",
       privacy: "Chính sách Bảo mật",
       terms: "Điều khoản Dịch vụ",
-    },
-    splash: {
-      taglineWords: ["Kết", "nối", "doanh", "nghiệp", "khắp", "khu vực!"],
-      highlightIndices: [1, 5],
-      progressLabel: "Đang đồng bộ kết nối",
     },
     // Common
     common: {

@@ -1,11 +1,23 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedBackground from "./AnimatedBackground";
-import { useLanguage } from "../context/LanguageContext";
-import { translations } from "../i18n/translations";
 
 const ANIMATION_DURATION = 0.8;
 const DISPLAY_TIME = 5000;
+const PROGRESS_LABEL = "LOADING TO GREATNESS";
+const ENGLISH_TAGLINE = [
+  "Connecting",
+  "Businesses",
+  "Across",
+  "the",
+  "world",
+  "to",
+  "the",
+  "Arabian",
+  "Region",
+];
+const HIGHLIGHTED_INDICES = new Set([4, 7, 8]);
+const ARABIC_TAGLINE = "نربط الأعمال من جميع أنحاء العالم بالمنطقة العربية";
 
 const ProgressBar = ({ progress, label }) => (
   <div className="w-full max-w-[300px] mt-6 relative z-20">
@@ -30,8 +42,6 @@ const ProgressBar = ({ progress, label }) => (
 );
 
 export default function Splash({ onComplete }) {
-  const { language } = useLanguage();
-  const t = translations[language];
   const [isVisible, setIsVisible] = useState(true);
   const [progress, setProgress] = useState(0);
 
@@ -77,9 +87,6 @@ export default function Splash({ onComplete }) {
       transition: { duration: 0.6, ease: "easeOut" },
     },
   };
-
-  const tagline = t.splash.taglineWords;
-  const highlightedIndices = new Set(t.splash.highlightIndices);
 
   return (
     <AnimatePresence>
@@ -127,11 +134,14 @@ export default function Splash({ onComplete }) {
               variants={containerVariants}
               initial="hidden"
               animate="visible"
-              className="text-center mb-2 max-w-lg mx-auto"
+              className="text-center mb-2 max-w-3xl mx-auto"
             >
-              <h1 className="text-xl md:text-2xl font-light tracking-wide leading-relaxed text-neutral-100">
-                {tagline.map((word, index) => {
-                  const isHighlight = highlightedIndices.has(index);
+              <h1 
+                className="text-xl md:text-2xl font-light tracking-wide leading-relaxed text-neutral-100"
+                dir="ltr"
+              >
+                {ENGLISH_TAGLINE.map((word, index) => {
+                  const isHighlight = HIGHLIGHTED_INDICES.has(index);
                   return (
                     <motion.span
                       key={index}
@@ -147,9 +157,16 @@ export default function Splash({ onComplete }) {
                   );
                 })}
               </h1>
+              <motion.p
+                variants={wordVariants}
+                className="mt-3 text-sm md:text-base text-neutral-300/80 leading-relaxed"
+                dir="rtl"
+              >
+                {ARABIC_TAGLINE}
+              </motion.p>
             </motion.div>
 
-            <ProgressBar progress={progress} label={t.splash.progressLabel} />
+            <ProgressBar progress={progress} label={PROGRESS_LABEL} />
           </motion.div>
         </motion.div>
       )}
