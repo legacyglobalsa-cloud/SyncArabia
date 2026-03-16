@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedBackground from "./AnimatedBackground";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../i18n/translations";
 
 const ANIMATION_DURATION = 0.8;
 const DISPLAY_TIME = 5000;
-const TAGLINE = ["Connecting", "businesses", "across", "the", "Arabian", "region!"];
 
-const ProgressBar = ({ progress }) => (
+const ProgressBar = ({ progress, label }) => (
   <div className="w-full max-w-[300px] mt-6 relative z-20">
     <div className="flex justify-between items-end mb-2">
-      <span className="text-[10px] text-neutral-400 font-bold tracking-[0.2em] uppercase">Syncing connections</span>
+      <span className="text-[10px] text-neutral-400 font-bold tracking-[0.2em] uppercase">{label}</span>
       <span className="text-[10px] font-mono text-sky-400">{progress}%</span>
     </div>
     <div className="h-[3px] w-full bg-neutral-800/50 relative overflow-hidden rounded-full backdrop-blur-sm">
@@ -29,6 +30,8 @@ const ProgressBar = ({ progress }) => (
 );
 
 export default function Splash({ onComplete }) {
+  const { language } = useLanguage();
+  const t = translations[language];
   const [isVisible, setIsVisible] = useState(true);
   const [progress, setProgress] = useState(0);
 
@@ -67,13 +70,16 @@ export default function Splash({ onComplete }) {
 
   const wordVariants = {
     hidden: { opacity: 0, y: 15, filter: "blur(10px)" },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
+    visible: {
+      opacity: 1,
+      y: 0,
       filter: "blur(0px)",
-      transition: { duration: 0.6, ease: "easeOut" }
+      transition: { duration: 0.6, ease: "easeOut" },
     },
   };
+
+  const tagline = t.splash.taglineWords;
+  const highlightedIndices = new Set(t.splash.highlightIndices);
 
   return (
     <AnimatePresence>
@@ -86,11 +92,11 @@ export default function Splash({ onComplete }) {
           transition={{ duration: 0.8, ease: "easeInOut" }}
           className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#050505] text-white overflow-hidden font-sans"
         >
-          <AnimatedBackground 
-            particleCount={300} 
-            particleSpread={15} 
-            speed={0.2} 
-            particleColors={['#008EC2', '#C9D250', '#ffffff']} 
+          <AnimatedBackground
+            particleCount={300}
+            particleSpread={15}
+            speed={0.2}
+            particleColors={["#008EC2", "#C9D250", "#ffffff"]}
             moveParticlesOnHover={true}
             alphaParticles={true}
             particleBaseSize={120}
@@ -124,15 +130,15 @@ export default function Splash({ onComplete }) {
               className="text-center mb-2 max-w-lg mx-auto"
             >
               <h1 className="text-xl md:text-2xl font-light tracking-wide leading-relaxed text-neutral-100">
-                {TAGLINE.map((word, index) => {
-                  const isHighlight = word === "businesses" || word === "region!";
+                {tagline.map((word, index) => {
+                  const isHighlight = highlightedIndices.has(index);
                   return (
                     <motion.span
                       key={index}
                       variants={wordVariants}
                       className={`inline-block mr-2 ${
                         isHighlight 
-                          ? "text-transparent bg-clip-text bg-gradient-to-br from-sky-200 to-sky-500 font-semibold drop-shadow-sm" 
+                          ? "text-transparent bg-clip-text bg-gradient-to-br from-sky-200 to-sky-500 font-semibold drop-shadow-sm"
                           : ""
                       }`}
                     >
@@ -143,7 +149,7 @@ export default function Splash({ onComplete }) {
               </h1>
             </motion.div>
 
-            <ProgressBar progress={progress} />
+            <ProgressBar progress={progress} label={t.splash.progressLabel} />
           </motion.div>
         </motion.div>
       )}

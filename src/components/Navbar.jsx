@@ -30,11 +30,12 @@ export default function Navbar() {
     { to: "/contact", label: t.nav.contact },
   ];
 
-  const langFlags = { en: "EN", ar: "AR", vi: "VI" };
+  const langFlags = { en: "EN", ar: "AR", vi: "VI", zh: "ZH" };
   const langLabels = {
     en: t.common.english,
     ar: t.common.arabic,
     vi: t.common.vietnamese,
+    zh: t.common.chinese,
   };
 
   return (
@@ -67,7 +68,7 @@ export default function Navbar() {
               <span
                 key={l.to}
                 className="relative flex items-center gap-2 px-4 py-2 text-[13px] font-medium rounded-full whitespace-nowrap text-white/20 cursor-not-allowed select-none"
-                title="Coming soon"
+                title={t.common.comingSoon}
               >
                 {l.label}
               </span>
@@ -173,12 +174,12 @@ export default function Navbar() {
           rel="noopener noreferrer"
           className="hidden lg:flex items-center px-5 py-2 rounded-full bg-primary text-primary-foreground text-[13px] font-bold hover:bg-primary/90 transition-all duration-300 shrink-0 shadow-lg shadow-primary/20"
         >
-          Portal
+          {t.common.portal}
         </a>
 
         {/* Mobile hamburger */}
         <button
-          aria-label="Open Menu"
+          aria-label={t.common.openMenu}
           className="lg:hidden ml-auto inline-flex size-11 items-center justify-center rounded-full bg-black/50 backdrop-blur-xl border border-white/[0.06] text-white hover:bg-white/10 transition-colors"
           onClick={() => setOpen(true)}
         >
@@ -246,7 +247,7 @@ export default function Navbar() {
                   className="h-8"
                 />
                 <button
-                  aria-label="Close Menu"
+                  aria-label={t.common.closeMenu}
                   className="inline-flex size-9 items-center justify-center rounded-full border border-white/[0.06] text-white/50 hover:text-white hover:bg-white/5 transition-colors"
                   onClick={() => setOpen(false)}
                 >
@@ -271,7 +272,7 @@ export default function Navbar() {
                     <span
                       key={l.to}
                       className="px-4 py-3.5 rounded-xl text-[15px] font-medium text-white/20 cursor-not-allowed select-none"
-                      title="Coming soon"
+                      title={t.common.comingSoon}
                     >
                       {l.label}
                     </span>
@@ -299,7 +300,7 @@ export default function Navbar() {
                   rel="noopener noreferrer"
                   className="px-4 py-3.5 rounded-xl transition-all duration-300 text-[15px] font-medium bg-primary/10 text-primary border border-primary/20 text-center mt-2"
                 >
-                  Portal
+                  {t.common.portal}
                 </a>
 
                 {/* Language Switcher (Mobile) */}

@@ -48,21 +48,21 @@ export default function About() {
   };
 
   const coreValues = [
-    { title: t.about.coreValues?.integrityTitle || "Trust", desc: t.about.coreValues?.integrityDesc || "We prioritize trust above all — building relationships where every stakeholder can operate with confidence.", icon: Shield },
-    { title: t.about.coreValues?.serviceTitle || "Service Excellence", desc: t.about.coreValues?.serviceDesc || "We operate with discipline under the principle of under-promise and over-deliver in everything we do.", icon: Star },
-    { title: t.about.coreValues?.unityTitle || "Partnership", desc: t.about.coreValues?.unityDesc || "We believe in long-term partnerships over short-term gains, creating mutual value that lasts.", icon: Handshake },
-    { title: t.about.coreValues?.stewardshipTitle || "Problem-Solving", desc: t.about.coreValues?.stewardshipDesc || "We identify real market problems and solve them through structured, scalable business solutions.", icon: Check },
-    { title: t.about.coreValues?.excellenceTitle || "Impact", desc: t.about.coreValues?.excellenceDesc || "We create measurable economic value and long-term impact in the Saudi business community.", icon: Globe },
-    { title: t.about.coreValues?.faithTitle || "Unity", desc: t.about.coreValues?.faithDesc || "We connect businesses, manpower, capital, and opportunities into one integrated ecosystem.", icon: Compass },
+    { title: t.about.coreValues.integrityTitle, desc: t.about.coreValues.integrityDesc, icon: Shield },
+    { title: t.about.coreValues.serviceTitle, desc: t.about.coreValues.serviceDesc, icon: Star },
+    { title: t.about.coreValues.unityTitle, desc: t.about.coreValues.unityDesc, icon: Handshake },
+    { title: t.about.coreValues.stewardshipTitle, desc: t.about.coreValues.stewardshipDesc, icon: Check },
+    { title: t.about.coreValues.excellenceTitle, desc: t.about.coreValues.excellenceDesc, icon: Globe },
+    { title: t.about.coreValues.faithTitle, desc: t.about.coreValues.faithDesc, icon: Compass },
   ];
 
   const advantages = [
-    { icon: ShieldCheck, title: t.about.whyChooseItems?.item1Title || "Due Diligence & Verification", desc: t.about.whyChooseItems?.item1Desc || "Rigorous screening and verification of all parties — minimizing risk and building trust." },
-    { icon: Handshake, title: t.about.whyChooseItems?.item2Title || "Deal Origination Hub", desc: t.about.whyChooseItems?.item2Desc || "Structured project access and facilitation connecting contractors, investors, and opportunities." },
-    { icon: BarChart3, title: t.about.whyChooseItems?.item3Title || "Investment Gateway", desc: t.about.whyChooseItems?.item3Desc || "Inbound and outbound investment facilitation with feasibility assessment and structuring." },
-    { icon: Users, title: t.about.whyChooseItems?.item4Title || "Corporate Expansion Engine", desc: t.about.whyChooseItems?.item4Desc || "Market entry advisory, partnership development, and operational restructuring for growth." },
-    { icon: Rocket, title: t.about.whyChooseItems?.item5Title || "Digital Platform", desc: t.about.whyChooseItems?.item5Desc || "Proprietary platform with dashboards, KYC workflows, project tracking, and opportunity intelligence." },
-    { icon: Truck, title: t.about.whyChooseItems?.item6Title || "End-to-End Execution", desc: t.about.whyChooseItems?.item6Desc || "From identification to stakeholder matching to structured execution — we handle the full lifecycle." },
+    { icon: ShieldCheck, title: t.about.whyChooseItems.item1Title, desc: t.about.whyChooseItems.item1Desc },
+    { icon: Handshake, title: t.about.whyChooseItems.item2Title, desc: t.about.whyChooseItems.item2Desc },
+    { icon: BarChart3, title: t.about.whyChooseItems.item3Title, desc: t.about.whyChooseItems.item3Desc },
+    { icon: Users, title: t.about.whyChooseItems.item4Title, desc: t.about.whyChooseItems.item4Desc },
+    { icon: Rocket, title: t.about.whyChooseItems.item5Title, desc: t.about.whyChooseItems.item5Desc },
+    { icon: Truck, title: t.about.whyChooseItems.item6Title, desc: t.about.whyChooseItems.item6Desc },
   ];
 
   return (
@@ -94,17 +94,17 @@ export default function About() {
                 <div className="flex gap-8">
                   <div>
                     <p className="text-3xl font-extrabold text-primary">13+</p>
-                    <p className="text-sm text-white/40 mt-1">Industry Platforms</p>
+                    <p className="text-sm text-white/40 mt-1">{t.services.statsIndustryPlatforms}</p>
                   </div>
                   <div className="w-px bg-white/10" />
                   <div>
                     <p className="text-3xl font-extrabold text-accent">3</p>
-                    <p className="text-sm text-white/40 mt-1">Market Tiers</p>
+                    <p className="text-sm text-white/40 mt-1">{t.services.statsMarketTiers}</p>
                   </div>
                   <div className="w-px bg-white/10" />
                   <div>
                     <p className="text-3xl font-extrabold text-primary">6</p>
-                    <p className="text-sm text-white/40 mt-1">Core Services</p>
+                    <p className="text-sm text-white/40 mt-1">{t.services.statsCoreServiceLines}</p>
                   </div>
                 </div>
               </Reveal>
@@ -128,9 +128,11 @@ export default function About() {
         <section>
           <Reveal>
             <div className="mb-10">
-              <p className="text-accent font-semibold tracking-widest uppercase text-sm mb-3">Watch</p>
+              <p className="text-accent font-semibold tracking-widest uppercase text-sm mb-3">{t.about.watchLabel}</p>
               <h2 className="text-3xl md:text-4xl font-bold">
-                See <span className="text-gradient-gold">SyncArabia</span> In Action
+                {t.about.videoTitleStart}{" "}
+                <span className="text-gradient-gold">{t.about.videoTitleHighlight}</span>{" "}
+                {t.about.videoTitleEnd}
               </h2>
             </div>
           </Reveal>
@@ -265,17 +267,14 @@ export default function About() {
               <div className="absolute top-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px] -translate-y-1/2 -translate-x-1/3 pointer-events-none" />
               <div className="relative z-10">
                 <h3 className="font-extrabold text-3xl md:text-4xl text-white mb-3">
-                  {t.about.competitiveEdgeTitle} <span className="text-gradient-gold">Edge</span>
+                  {t.about.competitiveEdgeTitle}{" "}
+                  <span className="text-gradient-gold">{t.about.competitiveEdgeHighlight}</span>
                 </h3>
                 <p className="text-lg text-white/50 mb-8 max-w-2xl">
                   {t.about.whyChooseSubtitle}
                 </p>
                 <div className="grid md:grid-cols-3 gap-4">
-                  {[
-                    "Structured project access and facilitation — connecting companies to real opportunities and decision-makers.",
-                    "Due diligence, deal structuring, and a trusted platform — giving investors confidence and verified opportunities.",
-                    "Investor matching, project structuring, and capital alignment — unlocking funding for viable projects.",
-                  ].map((item, i) => (
+                  {t.about.competitiveEdgePoints.map((item, i) => (
                     <div key={i} className="flex items-start gap-3 p-5 rounded-xl bg-white/[0.03] border border-white/[0.04]">
                       <Check className="size-5 text-primary mt-0.5 shrink-0" />
                       <span className="text-sm text-white/60 leading-relaxed">{item}</span>

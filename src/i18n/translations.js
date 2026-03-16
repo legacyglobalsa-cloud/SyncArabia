@@ -1,3 +1,5 @@
+import { zhTranslations } from "./zhTranslations";
+
 export const translations = {
   en: {
     // Home Page
@@ -1275,6 +1277,7 @@ export const translations = {
     services: {
       titlePart1: "Strategic",
       titlePart2: "Solutions",
+      divisionLabel: "Division 1 - Core Business Model",
       subtitle:
         "SYNC Arabia operates as a structured commercial engine—connecting capital, projects, companies, and execution into one integrated ecosystem through",
       subtitleHighlight:
@@ -1292,21 +1295,88 @@ export const translations = {
       buyerRepTitle: "Business Matchmaking & Project Facilitation",
       buyerRepDesc:
         "Connect companies to contractors, suppliers, and partners. Structure alliances and position companies into project pipelines.",
+      buyerRepHighlights: [
+        "Project access",
+        "Market entry",
+        "Alliance structuring",
+      ],
       sellerRepTitle: "Investment Facilitation",
       sellerRepDesc:
         "Bring investors into Saudi projects and connect Saudi investors to global assets with structured alignment.",
+      sellerRepHighlights: [
+        "Inbound investment",
+        "Outbound global",
+        "Deal structuring",
+      ],
       marketAnalysisTitle: "Partnership Development",
       marketAnalysisDesc:
         "Strategic joint ventures, public-private collaboration, cross-border partnerships, and ecosystem building.",
+      marketAnalysisHighlights: [
+        "Joint ventures",
+        "Cross-border",
+        "Ecosystem building",
+      ],
       transactionTitle: "Business Consultancy",
       transactionDesc:
         "Market entry advisory, operational restructuring, strategy & growth planning, and commercial optimization.",
+      transactionHighlights: [
+        "Market advisory",
+        "Growth planning",
+        "Restructuring",
+      ],
       businessPlanTitle: "Merger & Acquisition (M&A)",
       businessPlanDesc:
         "Acquisition sourcing, buyer-seller alignment, valuation coordination, due diligence, and post-merger integration.",
+      businessPlanHighlights: [
+        "Acquisition sourcing",
+        "Due diligence",
+        "Integration",
+      ],
       riskManagementTitle: "Risk Management & Compliance",
       riskManagementDesc:
         "Comprehensive risk assessment, KYC workflows, compliance verification, and regulatory guidance.",
+      riskManagementHighlights: [
+        "Risk profiling",
+        "KYC & compliance",
+        "Governance",
+      ],
+      officeSetupTitle: "Company & Office Setup with Marketing Tools",
+      officeSetupDesc:
+        "Complete company and office setup services with integrated marketing tools to launch and grow your business presence in Saudi Arabia.",
+      officeSetupHighlights: [
+        "Company formation",
+        "Office setup",
+        "Marketing tools",
+      ],
+      websiteDevelopmentTitle: "Website Development",
+      websiteDevelopmentDesc:
+        "Professional website design and development tailored for businesses in Saudi Arabia. From corporate websites to e-commerce platforms, we build scalable, modern digital presences.",
+      websiteDevelopmentHighlights: [
+        "Corporate websites",
+        "E-commerce",
+        "Digital presence",
+      ],
+      statsIndustryPlatforms: "Industry Platforms",
+      statsCoreServiceLines: "Core Service Lines",
+      statsMarketTiers: "Market Tiers",
+      statsIntegratedEcosystem: "Integrated Ecosystem",
+      sectorsList: [
+        "Recruitment & Manpower",
+        "Entertainment, F&B & Events",
+        "Oil & Gas",
+        "Construction & Engineering",
+        "Innovation & Technology",
+        "Facility Management",
+        "Logistics & Supply Chain",
+        "E-Commerce Platforms",
+        "Trade Import & Export",
+        "Real Estate Management",
+        "Travel & Leisure",
+        "Health & Wellness",
+        "Training & Development Centers",
+        "Food & Beverages",
+        "Manufacturing",
+      ],
       // Client Flow
       step1Title: "Identification",
       step1Desc: "Sourcing from tenders, portals, partners & networks",
@@ -1342,6 +1412,16 @@ export const translations = {
       coreValuesTitleHighlight: "Core Values",
       keyDataTitle: "Key Data",
       competitiveEdgeTitle: "Our Competitive Edge",
+      competitiveEdgeHighlight: "Edge",
+      watchLabel: "Watch",
+      videoTitleStart: "See",
+      videoTitleHighlight: "SyncArabia",
+      videoTitleEnd: "In Action",
+      competitiveEdgePoints: [
+        "Structured project access and facilitation - connecting companies to real opportunities and decision-makers.",
+        "Due diligence, deal structuring, and a trusted platform - giving investors confidence and verified opportunities.",
+        "Investor matching, project structuring, and capital alignment - unlocking funding for viable projects.",
+      ],
       mdMessageBody1:
         "At SYNC Arabia, we are building more than a company. We are creating a problem-solving ecosystem designed to bridge the gaps that hold businesses back in the Saudi market. Our mission is to connect contractors to projects, investors to vetted opportunities, and capital to execution platforms with trust and transparency at the core of every transaction.",
       mdMessageBody2:
@@ -1466,12 +1546,29 @@ export const translations = {
       privacy: "Privacy Policy",
       terms: "Terms of Service",
     },
+    splash: {
+      taglineWords: [
+        "Connecting",
+        "businesses",
+        "across",
+        "the",
+        "Arabian",
+        "region!",
+      ],
+      highlightIndices: [1, 5],
+      progressLabel: "Syncing connections",
+    },
     // Common
     common: {
       language: "Language",
       english: "English",
       arabic: "Arabic",
       vietnamese: "Vietnamese",
+      chinese: "Chinese",
+      portal: "Portal",
+      comingSoon: "Coming soon",
+      openMenu: "Open menu",
+      closeMenu: "Close menu",
     },
   },
   ar: {
@@ -2717,6 +2814,7 @@ export const translations = {
     services: {
       titlePart1: "الحلول",
       titlePart2: "العالمية",
+      divisionLabel: "القسم 1 - نموذج الأعمال الأساسي",
       subtitle:
         "نقدم الاستشارات والحلول التجارية المخصصة بين الشركات لتلبية الاحتياجات المتطورة لعملائنا — نضمن",
       subtitleHighlight: "معاملات آمنة وشفافة وناجحة",
@@ -2732,21 +2830,56 @@ export const translations = {
       buyerRepTitle: "تمثيل المشترين / العملاء",
       buyerRepDesc:
         "التصرف نيابة عن المشترين / العملاء لتأمين أفضل الفرص المتوافقة مع الأهداف الاستراتيجية.",
+      buyerRepHighlights: ["الوصول للمشاريع", "دخول السوق", "هيكلة التحالفات"],
       sellerRepTitle: "تمثيل البائعين / مقدمي الخدمات",
       sellerRepDesc:
         "مساعدة البائعين / مقدمي الخدمات في الوصول إلى المشترين والأسواق المؤهلة بكفاءة.",
+      sellerRepHighlights: ["استثمار وارد", "توسع خارجي", "هيكلة الصفقات"],
       marketAnalysisTitle: "الاستشارات في تحليل السوق",
       marketAnalysisDesc:
         "الرؤى والتحليلات لوضع عملك بشكل تنافسي في الأسواق الجديدة والقائمة.",
+      marketAnalysisHighlights: ["المشاريع المشتركة", "عبر الحدود", "بناء المنظومات"],
       transactionTitle: "دعم المعاملات",
       transactionDesc:
         "العناية الواجبة والتوثيق ودعم المفاوضات من الاستفسار إلى الإغلاق.",
+      transactionHighlights: ["استشارات السوق", "تخطيط النمو", "إعادة الهيكلة"],
       businessPlanTitle: "تخطيط الأعمال واستراتيجيات التوسع",
       businessPlanDesc:
         "خطط مخصصة للنمو ودخول السوق وقابلية التوسع طويلة الأجل.",
+      businessPlanHighlights: ["استهداف الاستحواذ", "العناية الواجبة", "التكامل"],
       riskManagementTitle: "إدارة المخاطر والامتثال",
       riskManagementDesc:
         "تقييم شامل للمخاطر والتحقق من الامتثال والتوجيه التنظيمي لحماية مصالح عملك.",
+      riskManagementHighlights: ["تحديد المخاطر", "اعرف عميلك والامتثال", "الحوكمة"],
+      officeSetupTitle: "تأسيس الشركات والمكاتب مع أدوات التسويق",
+      officeSetupDesc:
+        "خدمات متكاملة لتأسيس الشركة والمكتب مع أدوات تسويقية مدمجة لإطلاق حضور أعمالك وتنميته في المملكة العربية السعودية.",
+      officeSetupHighlights: ["تأسيس الشركة", "تجهيز المكتب", "أدوات التسويق"],
+      websiteDevelopmentTitle: "تطوير المواقع الإلكترونية",
+      websiteDevelopmentDesc:
+        "تصميم وتطوير مواقع احترافية مخصصة للأعمال في المملكة العربية السعودية. من المواقع المؤسسية إلى منصات التجارة الإلكترونية، نبني حضورًا رقميًا حديثًا وقابلًا للتوسع.",
+      websiteDevelopmentHighlights: ["مواقع الشركات", "التجارة الإلكترونية", "الحضور الرقمي"],
+      statsIndustryPlatforms: "منصات صناعية",
+      statsCoreServiceLines: "خطوط الخدمة الأساسية",
+      statsMarketTiers: "شرائح السوق",
+      statsIntegratedEcosystem: "منظومة متكاملة",
+      sectorsList: [
+        "التوظيف والقوى العاملة",
+        "الترفيه والأغذية والمشروبات والفعاليات",
+        "النفط والغاز",
+        "البناء والهندسة",
+        "الابتكار والتكنولوجيا",
+        "إدارة المرافق",
+        "الخدمات اللوجستية وسلسلة التوريد",
+        "منصات التجارة الإلكترونية",
+        "الاستيراد والتصدير التجاري",
+        "إدارة العقارات",
+        "السفر والترفيه",
+        "الصحة والعافية",
+        "مراكز التدريب والتطوير",
+        "الأغذية والمشروبات",
+        "التصنيع",
+      ],
       step1Title: "الاستفسار الأولي",
       step1Desc: "التحقق والتوثيق",
       step2Title: "المطابقة",
@@ -2779,6 +2912,16 @@ export const translations = {
       coreValuesTitleHighlight: "الأساسية",
       keyDataTitle: "البيانات الرئيسية",
       competitiveEdgeTitle: "ميزتنا التنافسية",
+      competitiveEdgeHighlight: "التنافسي",
+      watchLabel: "شاهد",
+      videoTitleStart: "شاهد",
+      videoTitleHighlight: "سينك أرابيا",
+      videoTitleEnd: "قيد التنفيذ",
+      competitiveEdgePoints: [
+        "وصول منظم إلى المشاريع وخدمات التسهيل - ربط الشركات بفرص حقيقية وصناع القرار.",
+        "العناية الواجبة وهيكلة الصفقات ومنصة موثوقة - تمنح المستثمرين الثقة وفرصًا موثقة.",
+        "مطابقة المستثمرين وهيكلة المشاريع ومواءمة رأس المال - لفتح التمويل أمام المشاريع القابلة للتنفيذ.",
+      ],
       mdMessageBody1:
         "في ليجاسي جلوبال، نؤمن بأن النجاح في الأعمال التجارية مبني على الثقة والشفافية والعلاقات الاستراتيجية. مهمتنا هي بناء الجسور بين الشركات، وتسهيل المعاملات السلسة، ودفع النمو المستدام من خلال الابتكار والعناية الواجبة. في السوق سريع الخطى اليوم، يعد تأمين شركاء موثوقين أمرًا بالغ الأهمية. ولهذا السبب نتجاوز الاستشارات التقليدية — حيث نجري تحققًا صارمًا لضمان بناء كل صفقة على أساس متين.",
       mdMessageBody2:
@@ -2896,12 +3039,22 @@ export const translations = {
       privacy: "سياسة الخصوصية",
       terms: "شروط الخدمة",
     },
+    splash: {
+      taglineWords: ["ربط", "الأعمال", "عبر", "المنطقة", "العربية", "بثقة"],
+      highlightIndices: [1, 4],
+      progressLabel: "جارِ مزامنة الروابط",
+    },
     // Common
     common: {
       language: "اللغة",
       english: "الإنجليزية",
       arabic: "العربية",
       vietnamese: "الفيتنامية",
+      chinese: "الصينية",
+      portal: "البوابة",
+      comingSoon: "قريبًا",
+      openMenu: "فتح القائمة",
+      closeMenu: "إغلاق القائمة",
     },
   },
   vi: {
@@ -4193,6 +4346,7 @@ export const translations = {
     services: {
       titlePart1: "Giải Pháp",
       titlePart2: "Toàn Cầu",
+      divisionLabel: "Khối 1 - Mô Hình Kinh Doanh Cốt Lõi",
       subtitle:
         "Chúng tôi cung cấp dịch vụ tư vấn B2B và giải pháp kinh doanh được thiết kế riêng để đáp ứng nhu cầu ngày càng phát triển của khách hàng—đảm bảo",
       subtitleHighlight: "giao dịch an toàn, minh bạch và thành công",
@@ -4208,21 +4362,56 @@ export const translations = {
       buyerRepTitle: "Đại diện Người mua/Khách hàng",
       buyerRepDesc:
         "Hành động thay mặt người mua/khách hàng để đảm bảo các cơ hội tốt nhất phù hợp với mục tiêu chiến lược.",
+      buyerRepHighlights: ["Tiếp cận dự án", "Thâm nhập thị trường", "Cấu trúc liên minh"],
       sellerRepTitle: "Đại diện Người bán/Nhà cung cấp dịch vụ",
       sellerRepDesc:
         "Giúp người bán/nhà cung cấp dịch vụ tiếp cận người mua và thị trường đủ điều kiện một cách hiệu quả.",
+      sellerRepHighlights: ["Đầu tư vào", "Mở rộng toàn cầu", "Cấu trúc giao dịch"],
       marketAnalysisTitle: "Tư vấn Phân tích Thị trường",
       marketAnalysisDesc:
         "Thông tin chi tiết và phân tích để định vị doanh nghiệp của bạn một cách cạnh tranh trong các thị trường mới và hiện có.",
+      marketAnalysisHighlights: ["Liên doanh", "Xuyên biên giới", "Xây dựng hệ sinh thái"],
       transactionTitle: "Hỗ trợ Giao dịch",
       transactionDesc:
         "Thẩm định, tài liệu và hỗ trợ đàm phán từ yêu cầu đến kết thúc.",
+      transactionHighlights: ["Tư vấn thị trường", "Lập kế hoạch tăng trưởng", "Tái cấu trúc"],
       businessPlanTitle: "Lập kế hoạch Kinh doanh & Chiến lược Mở rộng",
       businessPlanDesc:
         "Các kế hoạch tùy chỉnh cho tăng trưởng, thâm nhập thị trường và khả năng mở rộng dài hạn.",
+      businessPlanHighlights: ["Tìm nguồn mua lại", "Thẩm định", "Tích hợp"],
       riskManagementTitle: "Quản lý Rủi ro & Tuân thủ",
       riskManagementDesc:
         "Đánh giá rủi ro toàn diện, xác minh tuân thủ và hướng dẫn quy định để bảo vệ lợi ích kinh doanh của bạn.",
+      riskManagementHighlights: ["Lập hồ sơ rủi ro", "KYC & tuân thủ", "Quản trị"],
+      officeSetupTitle: "Thiết lập Công ty & Văn phòng với Công cụ Tiếp thị",
+      officeSetupDesc:
+        "Dịch vụ thiết lập công ty và văn phòng toàn diện tích hợp công cụ tiếp thị để khởi động và phát triển hiện diện kinh doanh của bạn tại Ả Rập Xê Út.",
+      officeSetupHighlights: ["Thành lập công ty", "Thiết lập văn phòng", "Công cụ tiếp thị"],
+      websiteDevelopmentTitle: "Phát triển Website",
+      websiteDevelopmentDesc:
+        "Thiết kế và phát triển website chuyên nghiệp dành riêng cho doanh nghiệp tại Ả Rập Xê Út. Từ website doanh nghiệp đến nền tảng thương mại điện tử, chúng tôi xây dựng hiện diện số hiện đại và có thể mở rộng.",
+      websiteDevelopmentHighlights: ["Website doanh nghiệp", "Thương mại điện tử", "Hiện diện số"],
+      statsIndustryPlatforms: "Nền tảng ngành",
+      statsCoreServiceLines: "Nhóm dịch vụ cốt lõi",
+      statsMarketTiers: "Tầng thị trường",
+      statsIntegratedEcosystem: "Hệ sinh thái tích hợp",
+      sectorsList: [
+        "Tuyển dụng & Nhân lực",
+        "Giải trí, F&B & Sự kiện",
+        "Dầu Khí",
+        "Xây dựng & Kỹ thuật",
+        "Đổi mới & Công nghệ",
+        "Quản lý Cơ sở",
+        "Hậu cần & Chuỗi Cung ứng",
+        "Nền tảng Thương mại Điện tử",
+        "Thương mại Xuất Nhập khẩu",
+        "Quản lý Bất động sản",
+        "Du lịch & Giải trí",
+        "Sức khỏe & Làm đẹp",
+        "Trung tâm Đào tạo & Phát triển",
+        "Thực phẩm & Đồ uống",
+        "Sản xuất",
+      ],
       step1Title: "Yêu cầu Ban đầu",
       step1Desc: "Xác minh và tài liệu",
       step2Title: "Kết nối",
@@ -4256,6 +4445,16 @@ export const translations = {
       coreValuesTitleHighlight: "Cốt Lõi",
       keyDataTitle: "Dữ liệu Chính",
       competitiveEdgeTitle: "Lợi thế Cạnh tranh",
+      competitiveEdgeHighlight: "Nổi Bật",
+      watchLabel: "Xem",
+      videoTitleStart: "Xem",
+      videoTitleHighlight: "SyncArabia",
+      videoTitleEnd: "Hoạt Động",
+      competitiveEdgePoints: [
+        "Tiếp cận dự án có cấu trúc và dịch vụ hỗ trợ - kết nối doanh nghiệp với cơ hội thực và người ra quyết định.",
+        "Thẩm định, cấu trúc giao dịch và nền tảng đáng tin cậy - mang lại sự tự tin cho nhà đầu tư và các cơ hội đã được xác minh.",
+        "Ghép nối nhà đầu tư, cấu trúc dự án và điều phối vốn - mở khóa nguồn tài trợ cho các dự án khả thi.",
+      ],
       mdMessageBody1:
         "Tại Legacy Global, chúng tôi tin rằng thành công trong kinh doanh được xây dựng trên lòng tin, sự minh bạch và các kết nối chiến lược. Sứ mệnh của chúng tôi là làm cầu nối cho các doanh nghiệp, tạo điều kiện thuận lợi cho các giao dịch liền mạch và thúc đẩy tăng trưởng bền vững thông qua đổi mới và thẩm định chi tiết. Trong thị trường ngày nay, việc đảm bảo các đối tác đáng tin cậy là rất quan trọng. Đó là lý do tại sao chúng tôi vượt xa tư vấn truyền thống—tiến hành xác minh nghiêm ngặt để đảm bảo mọi thỏa thuận được xây dựng trên nền tảng vững chắc.",
       mdMessageBody2:
@@ -4379,12 +4578,23 @@ export const translations = {
       privacy: "Chính sách Bảo mật",
       terms: "Điều khoản Dịch vụ",
     },
+    splash: {
+      taglineWords: ["Kết", "nối", "doanh", "nghiệp", "khắp", "khu vực!"],
+      highlightIndices: [1, 5],
+      progressLabel: "Đang đồng bộ kết nối",
+    },
     // Common
     common: {
       language: "Ngôn Ngữ",
       english: "Tiếng Anh",
       arabic: "Tiếng Ả Rập",
       vietnamese: "Tiếng Việt",
+      chinese: "Tiếng Trung",
+      portal: "Cổng thông tin",
+      comingSoon: "Sắp ra mắt",
+      openMenu: "Mở menu",
+      closeMenu: "Đóng menu",
     },
   },
+  zh: zhTranslations,
 };

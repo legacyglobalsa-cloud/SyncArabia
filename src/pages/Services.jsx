@@ -30,58 +30,60 @@ export default function Services() {
       icon: Handshake,
       title: t.services.buyerRepTitle,
       desc: t.services.buyerRepDesc,
-      highlights: ["Project access", "Market entry", "Alliance structuring"],
+      highlights: t.services.buyerRepHighlights,
     },
     {
       icon: BarChart3,
       title: t.services.sellerRepTitle,
       desc: t.services.sellerRepDesc,
-      highlights: ["Inbound investment", "Outbound global", "Deal structuring"],
+      highlights: t.services.sellerRepHighlights,
     },
     {
       icon: Users,
       title: t.services.marketAnalysisTitle,
       desc: t.services.marketAnalysisDesc,
-      highlights: ["Joint ventures", "Cross-border", "Ecosystem building"],
+      highlights: t.services.marketAnalysisHighlights,
     },
     {
       icon: Briefcase,
       title: t.services.transactionTitle,
       desc: t.services.transactionDesc,
-      highlights: ["Market advisory", "Growth planning", "Restructuring"],
+      highlights: t.services.transactionHighlights,
     },
     {
       icon: GitMerge,
       title: t.services.businessPlanTitle,
       desc: t.services.businessPlanDesc,
-      highlights: ["Acquisition sourcing", "Due diligence", "Integration"],
+      highlights: t.services.businessPlanHighlights,
     },
     {
       icon: Shield,
       title: t.services.riskManagementTitle,
       desc: t.services.riskManagementDesc,
-      highlights: ["Risk profiling", "KYC & compliance", "Governance"],
+      highlights: t.services.riskManagementHighlights,
     },
     {
       icon: Store,
-      title: "Company & Office Setup with Marketing Tools",
-      desc: "Complete company and office setup services with integrated marketing tools to launch and grow your business presence in Saudi Arabia.",
-      highlights: ["Company formation", "Office setup", "Marketing tools"],
+      title: t.services.officeSetupTitle,
+      desc: t.services.officeSetupDesc,
+      highlights: t.services.officeSetupHighlights,
     },
     {
       icon: Globe,
-      title: "Website Development",
-      desc: "Professional website design and development tailored for businesses in Saudi Arabia. From corporate websites to e-commerce platforms, we build scalable, modern digital presences.",
-      highlights: ["Corporate websites", "E-commerce", "Digital presence"],
+      title: t.services.websiteDevelopmentTitle,
+      desc: t.services.websiteDevelopmentDesc,
+      highlights: t.services.websiteDevelopmentHighlights,
     },
   ];
 
   const stats = [
-    { value: "13+", label: "Industry Platforms", icon: Target },
-    { value: "6", label: "Core Service Lines", icon: Zap },
-    { value: "3", label: "Market Tiers", icon: Globe },
-    { value: "1", label: "Integrated Ecosystem", icon: TrendingUp },
+    { value: "13+", label: t.services.statsIndustryPlatforms, icon: Target },
+    { value: "6", label: t.services.statsCoreServiceLines, icon: Zap },
+    { value: "3", label: t.services.statsMarketTiers, icon: Globe },
+    { value: "1", label: t.services.statsIntegratedEcosystem, icon: TrendingUp },
   ];
+
+  const sectors = t.services.sectorsList;
 
   const steps = [
     { step: "01", title: t.services.step1Title, desc: t.services.step1Desc },
@@ -109,7 +111,7 @@ export default function Services() {
             <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
             <div className="relative z-10 max-w-3xl">
               <p className="text-primary font-semibold tracking-widest uppercase text-sm mb-4">
-                Division 1 — Core Business Model
+                {t.services.divisionLabel}
               </p>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] mb-6">
                 {t.services.titlePart1} &<br />
@@ -226,23 +228,7 @@ export default function Services() {
           </Reveal>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {[
-              "Recruitment & Manpower",
-              "Entertainment, F&B & Events",
-              "Oil & Gas",
-              "Construction & Engineering",
-              "Innovation & Technology",
-              "Facility Management",
-              "Logistics & Supply Chain",
-              "E-Commerce Platforms",
-              "Trade Import & Export",
-              "Real Estate Management",
-              "Travel & Leisure",
-              "Health & Wellness",
-              "Training & Development Centers",
-              "Food & Beverages",
-              "Manufacturing",
-            ].map((item, i) => (
+            {sectors.map((item, i) => (
               <Reveal delay={i * 0.03} key={item}>
                 <FM.motion.div
                   whileHover={{ x: 4 }}
