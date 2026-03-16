@@ -16,13 +16,12 @@ export default function Home() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3,
+        staggerChildren: 0,
       },
     },
   };
 
-  const itemVariants = {
+  const videoItemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
@@ -31,19 +30,28 @@ export default function Home() {
     },
   };
 
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut", delay: 10 },
+    },
+  };
+
   return (
     <div className="bg-[#050505] text-white bg-noise overflow-x-hidden">
       {/* HERO SECTION */}
       <section className="relative min-h-screen w-full overflow-hidden flex items-center justify-center">
         {/* Aurora Background */}
-        <div className="absolute inset-0 z-0">
+        {/* <div className="absolute inset-0 z-0">
           <Aurora
             colorStops={["#008EC2", "#00B4F0", "#C9D250"]}
             blend={0.6}
             amplitude={1.2}
             speed={0.8}
           />
-        </div>
+        </div> */}
 
         {/* Gradient overlays */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/80 via-transparent to-[#050505] z-[1]" />
@@ -56,15 +64,21 @@ export default function Home() {
             animate="visible"
             className="flex flex-col items-center text-center gap-8 md:gap-10"
           >
-            {/* Logo */}
+            {/* Logo Video */}
             <motion.div
-              variants={itemVariants}
+              variants={videoItemVariants}
               className="flex items-center justify-center"
             >
-              <img
-                src="/LOGO SYNCARABIA/LOGO WHITE.png"
-                alt="SyncArabia"
-                className="w-[280px] sm:w-[360px] md:w-[460px] lg:w-[540px] h-auto object-contain"
+              <video
+                src="/SyncArabia.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                disablePictureInPicture
+                controlsList="nodownload nofullscreen noremoteplayback"
+                onContextMenu={(e) => e.preventDefault()}
+                className="w-[280px] sm:w-[460px] md:w-[560px] lg:w-[640px] h-auto object-contain pointer-events-none"
               />
             </motion.div>
 
