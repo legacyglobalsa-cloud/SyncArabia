@@ -16,17 +16,9 @@ export default function Home() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0,
+        staggerChildren: 0.1,
+        delayChildren: 0.3,
       },
-    },
-  };
-
-  const videoItemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
     },
   };
 
@@ -35,7 +27,7 @@ export default function Home() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut", delay: 10 },
+      transition: { duration: 0.6, ease: "easeOut" },
     },
   };
 
@@ -44,14 +36,14 @@ export default function Home() {
       {/* HERO SECTION */}
       <section className="relative min-h-screen w-full overflow-hidden flex items-center justify-center">
         {/* Aurora Background */}
-        {/* <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0">
           <Aurora
             colorStops={["#008EC2", "#00B4F0", "#C9D250"]}
             blend={0.6}
             amplitude={1.2}
             speed={0.8}
           />
-        </div> */}
+        </div>
 
         {/* Gradient overlays */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/80 via-transparent to-[#050505] z-[1]" />
@@ -64,21 +56,16 @@ export default function Home() {
             animate="visible"
             className="flex flex-col items-center text-center gap-8 md:gap-10"
           >
-            {/* Logo Video */}
+
+            {/* Logo */}
             <motion.div
-              variants={videoItemVariants}
+              variants={itemVariants}
               className="flex items-center justify-center"
             >
-              <video
-                src="/SyncArabia.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                disablePictureInPicture
-                controlsList="nodownload nofullscreen noremoteplayback"
-                onContextMenu={(e) => e.preventDefault()}
-                className="w-[280px] sm:w-[460px] md:w-[560px] lg:w-[640px] h-auto object-contain pointer-events-none"
+              <img
+                src="/LOGO SYNCARABIA/LOGO WHITE.png"
+                alt="SyncArabia"
+                className="w-[280px] sm:w-[360px] md:w-[460px] lg:w-[540px] h-auto object-contain"
               />
             </motion.div>
 
