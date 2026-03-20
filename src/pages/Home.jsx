@@ -1,15 +1,25 @@
-import { ArrowRight, ShieldCheck, BarChart3, Users, Handshake, Rocket, Globe } from "lucide-react";
+import { useEffect, useState } from "react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Link } from "react-router-dom";
-import Reveal from "../components/Reveal";
 import { motion } from "framer-motion";
 import Aurora from "../components/Aurora";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../i18n/translations";
 
 export default function Home() {
+  const INTRO_DELAY_MS = 9000;
   const { language } = useLanguage();
   const t = translations[language];
+  const [showHomeContent, setShowHomeContent] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowHomeContent(true);
+    }, INTRO_DELAY_MS);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -51,64 +61,83 @@ export default function Home() {
         {/* Content */}
         <div className="relative z-10 w-full max-w-5xl px-4 sm:px-6 lg:px-8 h-full">
           <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="flex flex-col items-center text-center gap-8 md:gap-10"
+            layout
+            className={`flex flex-col items-center text-center ${showHomeContent ? "gap-8 md:gap-10" : ""}`}
           >
 
             {/* Logo */}
             <motion.div
-              variants={itemVariants}
+              layout
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: showHomeContent ? 1 : 1.04 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
               className="flex items-center justify-center"
             >
-              <img
-                src="/LOGO SYNCARABIA/LOGO WHITE.png"
-                alt="SyncArabia"
-                className="w-[280px] sm:w-[360px] md:w-[460px] lg:w-[540px] h-auto object-contain"
+              <video
+                src="/SyncArabia2-transparent.webm"
+                aria-label="SyncArabia"
+                className="w-[380px] sm:w-[460px] md:w-[560px] lg:w-[640px] h-auto object-contain"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="metadata"
               />
             </motion.div>
 
             {/* Tagline */}
-            <motion.div variants={itemVariants} className="max-w-3xl">
-              <p className="text-white/70 text-lg sm:text-xl md:text-2xl font-light leading-relaxed tracking-wide">
-                {t.home.tagline}{" "}
-                <span className="text-primary font-medium">{t.home.buyers}</span>,{" "}
-                <span className="text-primary font-medium">{t.home.clients}</span>,{" "}
-                {t.home.and}{" "}
-                <span className="text-accent font-medium">{t.home.serviceProviders}</span>{" "}
-                {t.home.withTrust}{" "}
-                <span className="text-primary font-medium">{t.home.trust}</span>,{" "}
-                <span className="text-primary font-medium">{t.home.transparency}</span>,{" "}
-                {t.home.and}{" "}
-                <span className="text-primary font-medium">{t.home.dueDiligence}</span>.
-              </p>
-            </motion.div>
+            {showHomeContent && (
+              <motion.div
+                variants={itemVariants}
+                initial="hidden"
+                animate="visible"
+                transition={{ delay: 0.1 }}
+                className="max-w-3xl"
+              >
+                <p className="text-white/70 text-lg sm:text-xl md:text-2xl font-light leading-relaxed tracking-wide">
+                  {t.home.tagline}{" "}
+                  <span className="text-primary font-medium">{t.home.buyers}</span>,{" "}
+                  <span className="text-primary font-medium">{t.home.clients}</span>,{" "}
+                  {t.home.and}{" "}
+                  <span className="text-accent font-medium">{t.home.serviceProviders}</span>{" "}
+                  {t.home.withTrust}{" "}
+                  <span className="text-primary font-medium">{t.home.trust}</span>,{" "}
+                  <span className="text-primary font-medium">{t.home.transparency}</span>,{" "}
+                  {t.home.and}{" "}
+                  <span className="text-primary font-medium">{t.home.dueDiligence}</span>.
+                </p>
+              </motion.div>
+            )}
 
             {/* CTA Buttons */}
-            <motion.div
-              variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-4 w-full mt-2 sm:w-auto"
-            >
-              <Link to="/services" className="w-full sm:w-auto">
-                <Button
-                  size="lg"
-                  className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 shadow-[0_0_30px_rgba(0,142,194,0.3)] hover:shadow-[0_0_40px_rgba(0,142,194,0.5)] transition-all duration-300 group"
-                >
-                  {t.home.exploreServices}
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-                </Button>
-              </Link>
-              <Link to="/contact" className="w-full sm:w-auto">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="w-full sm:w-auto border-white/10 hover:border-primary/50 hover:bg-white/5 text-foreground backdrop-blur-sm transition-all duration-300"
-                >
-                  {t.home.contactUs}
-                </Button>
-              </Link>
-            </motion.div>
+            {showHomeContent && (
+              <motion.div
+                variants={itemVariants}
+                initial="hidden"
+                animate="visible"
+                transition={{ delay: 0.2 }}
+                className="flex flex-col sm:flex-row gap-4 w-full mt-2 sm:w-auto"
+              >
+                <Link to="/services" className="w-full sm:w-auto">
+                  <Button
+                    size="lg"
+                    className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 shadow-[0_0_30px_rgba(0,142,194,0.3)] hover:shadow-[0_0_40px_rgba(0,142,194,0.5)] transition-all duration-300 group"
+                  >
+                    {t.home.exploreServices}
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  </Button>
+                </Link>
+                <Link to="/contact" className="w-full sm:w-auto">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="w-full sm:w-auto border-white/10 hover:border-primary/50 hover:bg-white/5 text-foreground backdrop-blur-sm transition-all duration-300"
+                  >
+                    {t.home.contactUs}
+                  </Button>
+                </Link>
+              </motion.div>
+            )}
           </motion.div>
         </div>
       </section>
